@@ -1,0 +1,114 @@
+%!Adobe-FontList 1.14
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:CID
+FontName:KozGoPro-Bold
+FamilyName:Kozuka Gothic Pro
+StyleName:B
+MenuName:Kozuka Gothic Pro B
+StyleBits:2
+WeightClass:700
+WidthClass:5
+AngleClass:0
+FullName:Kozuka Gothic Pro B
+FamilyNameNative:小塚ゴシック Pro
+StyleNameNative:B
+FullNameNative:小塚ゴシック Pro B
+WritingScript:Japanese
+OutlineFileName:\KozGoPro-Bold.otf
+DataFormat:sfntData
+isCFF:yes
+FileLength:3590024
+FileModTime:1486923077
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:CID
+FontName:KozGoPro-ExtraLight
+FamilyName:Kozuka Gothic Pro
+StyleName:EL
+MenuName:Kozuka Gothic Pro EL
+StyleBits:0
+WeightClass:250
+WidthClass:5
+AngleClass:0
+FullName:Kozuka Gothic Pro EL
+FamilyNameNative:小塚ゴシック Pro
+StyleNameNative:EL
+FullNameNative:小塚ゴシック Pro EL
+WritingScript:Japanese
+OutlineFileName:\KozGoPro-ExtraLight.otf
+DataFormat:sfntData
+isCFF:yes
+FileLength:3255804
+FileModTime:1486923077
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:CID
+FontName:KozGoPro-Light
+FamilyName:Kozuka Gothic Pro
+StyleName:L
+MenuName:Kozuka Gothic Pro L
+StyleBits:0
+WeightClass:300
+WidthClass:5
+AngleClass:0
+FullName:Kozuka Gothic Pro L
+FamilyNameNative:小塚ゴシック Pro
+StyleNameNative:L
+FullNameNative:小塚ゴシック Pro L
+WritingScript:Japanese
+OutlineFileName:\KozGoPro-Light.otf
+DataFormat:sfntData
+isCFF:yes
+FileLength:3459924
+FileModTime:1486923077
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:CID
+FontName:KozGoPro-Medium
+FamilyName:Kozuka Gothic Pro
+StyleName:M
+MenuName:Kozuka Gothic Pro M
+StyleBits:0
+WeightClass:500
+WidthClass:5
+AngleClass:0
+FullName:Kozuka Gothic Pro M
+FamilyNameNative:小塚ゴシック Pro
+StyleNameNative:M
+FullNameNative:小塚ゴシック Pro M
+WritingScript:Japanese
+OutlineFileName:\KozGoPro-Medium.otf
+DataFormat:sfntData
+isCFF:yes
+FileLength:3499164
+FileModTime:1486923078
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Tahoma
+FamilyName:Tahoma
+StyleName:Regular
+MenuName:Tahoma
+StyleBits:0
+WeightClass:400
+WidthClass:5
+AngleClass:0
+FullName:Tahoma
+WritingScript:Roman
+OutlineFileName:\Tahoma.ttf
+DataFormat:sfntData
+FileLength:681120
+FileModTime:1478437915
+%EndFont
+
