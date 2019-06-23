@@ -13,22 +13,16 @@ $(function(){
             $(sLayer).removeClass('current');
         });
 
+        // $(".fa-ellipsis-v").on('click',function(){
+        //     $(".headerNav").toggleClass("navOpen");
+        //   });
 
-    // // formStage1 validation
-    //     $('#tripPlanner').validate({
-    //         rules:{
-    //             firstname:{
-    //                 required:true,
-    //             },
-    //         },
-    //         messages:{
-    //             firstname:{
-    //                 required:'Please fill in your First Name',
-    //             }
-
-    //          },
-    //     });
-
+      
+    });
+    $(function(){
+        $('.menuButton').click( function() {
+            $(".headerNav").toggleClass("navOpen");
+        } );
     });
     $(function(){
 
@@ -54,11 +48,11 @@ $(function(){
             // If value is not empty
             if ($(this).val().length < 2) {
             // Hide the elementx
-                $('.nextButton').addClass('buttonHidden');
+                $('.nextButton').addClass('nextButtonHidden');
                 $('.nextButton').removeClass('buttonShow');
             } else {
             // Otherwise show it
-                $('.nextButton').removeClass('buttonHidden');
+                $('.nextButton').removeClass('nextButtonHidden');
                 $('.nextButton').addClass('buttonShow');
             }
         }).keyup();

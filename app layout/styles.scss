@@ -1,20 +1,28 @@
 // colorSwatches
-$color-1: rgba(242,242,242, 1);
-$color-2: rgba(140,140,140, 1);
-$color-3: rgba(89,89,89, 1);
-$color-4: rgba(38,38,38, 1);
+$color-1: rgb(226, 67, 1);
+$color-2: rgb(220, 220, 220);
+$color-3: rgb(189, 189, 189);
+$color-4: rgb(46, 46, 46);
 $color-5: rgba(12,12,12, 1);
 
+@import "_input.scss";
 
 // resetModule
 * {
     margin:0;
     padding:0;
     text-decoration: none;
+    text-indent: 0;
+    list-style: none;
 }
 
+
 body {
-    font-family:roboto,Arial, Helvetica, sans-serif;
+   font-family: 'Heebo', sans-serif;
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: 'Heebo', sans-serif;
 }
 
 // layoutModule
@@ -30,7 +38,7 @@ body {
         display: flex;
         flex-direction: column;
         header {
-            height: 4em;
+            height: 10%;
         }
         main{
             flex: 1 0 auto;
@@ -61,8 +69,8 @@ body {
             }
         }
         footer{
-            height: 2em;
-            border:thin rgb(0, 0, 0) solid;
+            height: 0em;
+            border:0 rgb(0, 0, 0) solid;
             background-color:#333;
         }
     }
@@ -71,21 +79,50 @@ body {
 .tripStages {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding-bottom: 10em;
+    justify-content: center;
     height: 100vh;
-
+    .steps {
+        display: flex;
+        align-self: flex-end;
+        align-items: center;
+        width: 75%;
+        flex-direction: row;
+        justify-content: space-around;
+        flex: 1 0 10%;
+        font-size: 2.5em;
+        div {
+            height: 2em;
+            display: flex;
+            width: 2em;
+            align-items: center;
+            background-color: #cdcdcd;
+            justify-content: center;
+            border-radius: .3em;
+        }
+    }
+    h1 {
+        text-align: center;
+        color: $color-4;
+        font-weight: 300;
+        line-height: 1.2;
+        font-size: 1.5em;
+    }
+   
 }
 
-.formOption.vfo1 {
-    display: flex;
-    flex-direction: row;
+.trip3 {
+    .wanakaMap {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background-image: url("assets/explore-wanaka.jpg");
+        background-size: 150%;
+        background-position: bottom;
+        background-repeat: no-repeat;
+    }
 }
 
-.formOption.vfo2 {
-    display: flex;
-    flex-direction: row;
-}
+
 
 // layoutMove
 
@@ -132,26 +169,7 @@ body {
     position:relative;
 }
 
-// layout Hide & Remove
 
-.buttonHidden {
-    opacity:.5;
-    transition:.5s ease all;
-    pointer-events:none;
-}
-
-.buttonShow {
-    opacity:1;
-    transition:.5s ease all;
-    pointer-events:initial;
-}
-
-
-.buttonGone {
-    opacity:0;
-    transition:.5s ease all;
-    pointer-events:none;
-}
 
 
 // headerModule
@@ -211,6 +229,85 @@ body {
 
 // navModule
 
+.headerNav {
+    transition:1.7s ease all;
+    height: 5em;
+    position: absolute;
+    z-index: 11;
+    width: 5em;
+    // border-radius: 0 0 100% 0%;
+    background-color:$color-5;
+    color:$color-2;
+    transition:ease 1s all;
+    clip-path: polygon(0 0, 100% 0, 50% 50%, 0% 100%);
+    display: flex;
+    justify-content: center;
+    padding: .5em;
+    .appNav {
+        transition:.5s ease all;
+        pointer-events: none;
+        height:0;
+        opacity: 0;
+        text-align: center;
+        justify-content: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        line-height: 3;
+        font-size: 1.3em;
+        flex-direction: column;
+        a {
+            color:$color-2;
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+    }
+    img {
+        opacity:0;
+        transition:.5s ease all;
+    }
+    .menuButton {
+        z-index: 99;
+        transform: rotate(45deg);
+        top: -.2em;
+        right: .6em;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        width: 2em;
+        height: 2em;
+        font-size: 2.5em;
+        transition:1s ease all;
+    }
+}
+
+.navOpen {
+    pointer-events: initial;
+    height: 100%;
+    position: absolute;
+    z-index: 11;
+    width: 100%;
+    // border-radius: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+    .appNav {
+        opacity:1;
+        height: 75%;
+        transition:3.5s ease all;
+    }
+    img {
+        opacity:1;
+    }
+    .menuButton {
+        transform: rotate(0deg);
+        top: 83%;
+        right: 0;
+        transition:1.5s ease all;
+}
+}
+
 .nav{
     list-style-type:none;
     padding:0;
@@ -226,10 +323,53 @@ body {
 
 // formModule
 
-.formOption {
-    display:flex;
-    flex-direction:column;
+.formGrp {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 70%;
+    .formOption {
+        display:flex;
+        flex-direction:column;
+        padding: .5em 2em;
+        label {
+            font-weight: 300;
+            text-align: center;
+            font-size: 1.3em;
+            color:$color-4;
+        }
+        input {
+            height: 2em;
+            border-radius: .4em;
+            border: 0;
+            background-color: $color-4;
+            font-weight: 300;
+            text-align: center;
+            font-size: 1.3em;
+            color:$color-2;
+           
+        }
+        input:placeholder {
+            font-weight: 500;
+            color:$color-2;
+            font-size: 1.3em;
+        }
+        select {
+            height: 2em;
+            border-radius: .4em;
+            border: 0;
+            background-color: $color-4;
+            font-weight: 300;
+            text-align-last: right;
+            direction: rtl;
+            text-align-last: center;
+            padding-right: 0em;
+            font-size: 1.5em;
+            text-transform: capitalize;
+            color:$color-2;
+        }
+    }
 }
+
 
 .transportForm  {
     display:flex;

@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Heebo:100,300,400,500,700,800,900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
@@ -47,29 +48,44 @@
 				</div>
 
 				<div class="layer layer1 move-right">
-					<header class="header">
-							<i class="fas fa-chevron-left" data-dismiss=".layer1"></i>
-							<div class="middle">Tourism NZ</div>
-							<div class="left"> <i class="fas fa-align-right"></i></div>
-					</header>
+					<nav class="headerNav">
+								<div class="menuButton"><i class="fas fa-ellipsis-v"></i></div>
+								<div class="middle"><img src="assets/wanaka-logo.png" alt="">
+									<ul class="appNav">
+											<li><a href="">HOME</a></li>
+											<li><a href="">PLAN YOUR TRIP</a></li>
+											<li><a href="">10 MUST DO'S IN WANAKA</a></li>
+											<li><a href="">ACCOMMODATION</a></li>
+											<li><a href="">CONTACT US</a></li>
+										</ul>
+									</div>
+
+					</nav>
 					<main>
 						<form action="" method="post" class="transportForm" id="tripPlanner">
 							<div class="tripStages trip1">
-							<h1>Please fill in the form below & we will work out your best mode of transport.</h1>						
+								<div class="steps">
+									<div class="div" style="background-color:#fff;"><i class="fas fa-users"></i></div>
+									<div class="div"><i class="fas fa-car"></i></div>
+									<div class="div"><i class="fas fa-map-marked-alt"></i></div>
+								</div>
+									<div class="formGrp">
+							<h1>Please fill in the form below & we will work out your best mode of transport.</h1>
+										
 							<div class="formOption fo1">		
 								<label></label>
-								<input type="text" name="firstName" id="firstname" placeholder="First Name"/>
+								<input type="text" name="firstName" id="firstname" placeholder="Full Name"/>
 								<span id="firstNameMessage"></span>
 							</div>
 							<div class="formOption fo2">	    
 								<label>How many people?</label>
 								<select name="numberPeople" id="numPeople">
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
+									<option value="1">One person</option>
+									<option value="2">Two people</option>
+									<option value="3">Three people</option>
+									<option value="4">Four people</option>
+									<option value="5">Five people</option>
+									<option value="6">Six people</option>
 									<!-- <option value="7">7</option>
 									<option value="8">8</option>
 									<option value="9">9</option>
@@ -81,34 +97,72 @@
 							<div class="formOption fo3">
 								<label>How many days travelling?</label>
 								<select name="numberDays" id="numDays">
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>
-										<option value="7">7</option>
-										<option value="8">8</option>
-										<option value="9">9</option>
-										<option value="10">10</option>
-										<option value="11">11</option>
-										<option value="12">12</option>
-										<option value="13">13</option>
-										<option value="14">14</option>
-										<option value="15">15</option>
+										<option value="1">One day travel</option>
+										<option value="2">Two days travel</option>
+										<option value="3">Three days travel</option>
+										<option value="4">Four days travel</option>
+										<option value="5">Five days travel</option>
+										<option value="6">Six days travel</option>
+										<option value="7">Seven days travel</option>
+										<option value="8">Eight days travel</option>
+										<option value="9">Nine days travel</option>
+										<option value="10">Ten days travel</option>
+										<option value="11">Eleven days travel</option>
+										<option value="12">Twelve days travel</option>
+										<option value="13">Thirteen days travel</option>
+										<option value="14">Fourteen days travel</option>
+										<option value="15">Fifteen days travel</option>
 									</select>
 								<span id="numDaysMessage"></span>
 							</div>
+						</div>	
 							<div class="nextButton"><a href="#" data-targetstage1=".transportForm" data-clearstage=".transportForm">NEXT</a></div>	
 						</div>
 						<div class="tripStages trip2">
+								<div class="steps">
+										<div class="div"><i class="fas fa-users"></i></div>
+										<div class="div" style="background-color:#fff;"><i class="fas fa-car"></i></div>
+										<div class="div"><i class="fas fa-map-marked-alt"></i></div>
+									</div>
 								<h1>The best modes of travel for you are listed below. Please select your preffered vehicle. </h1>						
-								<div class="formOption vfo1">		
-									<label></label>
-										<input type="radio" id="motorbike" name="vehicle" value="motorbike"> Motor Bike<br>
-										<input type="radio" id="smallCar" name="vehicle" value="smallCar"> Small Car<br>
-										<input type="radio" id="largeCar" name="vehicle" value="largeCar"> Large Car<br>
-										<input type="radio" id="motorHome" name="vehicle" value="motorHome"> Motor Home<br>
+								<div class="formOption vfo1">
+										<div class="option-group">
+												<div class="option-container">
+										<input class="option-input"  type="radio" id="Input-motorbike" name="vehicle" value="motorbike">
+										<input class="option-input"  type="radio" id="Input-smallCar" name="vehicle" value="smallCar"> 
+										<label class="option motorbike" for="Input-motorbike" id="motorbike">
+												<span class="option__indicator"><img src="assets/scooter.png" alt=""></span>
+												<span class="option__label">
+														Motor Bike<sub></sub>
+												</span>
+											  </label>
+											  <label class="option smallCar" for="Input-smallCar" id="smallCar">
+													<span class="option__indicator"><img src="assets/smallcar.png" alt=""></span>
+													<span class="option__label">
+															Small Car<sub></sub>
+													</span>
+											</label>
+											</div>
+											</div>
+											<div class="option-group">
+													<div class="option-container">
+										<input class="option-input"  type="radio" id="Input-largeCar" name="vehicle" value="largeCar"> 
+										<input class="option-input"  type="radio" id="Input-motorHome" name="vehicle" value="motorHome"> 
+										<label class="option" for="Input-largeCar"  id="largeCar">
+												<span class="option__indicator"><img src="assets/largecar.png" alt=""></span>
+												<span class="option__label">
+														Large Car<sub></sub>
+												</span>
+											  </label>
+										  
+											  <label class="option" for="Input-motorHome" id="motorHome">
+												<span class="option__indicator"><img src="assets/motorhome.png" alt=""></span>
+												<span class="option__label">
+												Motor Home<sub></sub>
+												</span>
+											  </label>
+									</div>
+								</div>
 									<span id="VehicleValidation"></span>
 								</div>
 								<!-- <div class="formOption vfo2">		
@@ -123,6 +177,12 @@
 								<div class="nextButton"><a href="#" data-targetstage2=".transportForm" data-clearstage=".transportForm">NEXT</a></div>	
 							</div>
 							<div class="tripStages trip3">
+									<div class="steps">
+											<div class="div"><i class="fas fa-users"></i></div>
+											<div class="div"><i class="fas fa-car"></i></div>
+											<div class="div" style="background-color:#fff;"><i class="fas fa-map-marked-alt"></i></div>
+										</div>
+								<div class="wanakaMap"></div> 
 								<div class="formSubmit">
 										<button type="submit" class="pure-button pure-button-primary">SUBMIT</button>
 										

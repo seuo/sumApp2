@@ -1,11 +1,373 @@
+.option-group {
+  width: 100%;
+  /* max-width: 400px; */
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  overflow: visible;
+  border-radius: 0.25em;
+  font-size: 1em;
+  margin-top: 0.2em;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.option-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  width: 120%;
+  height: 100%;
+  margin: 0 -10%;
+}
+
+.option {
+  overflow: hidden;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: block;
+  padding: 0.5em;
+  background: #bdbdbd;
+  position: relative;
+  margin: 0em;
+  margin-right: 0.2em;
+  border-radius: 0.25em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+  opacity: 0.5;
+  -webkit-transition-duration: 0.8s, 0.6s;
+          transition-duration: 0.8s, 0.6s;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+  -webkit-transition-timing-function: cubic-bezier(0.98, 0, 0.22, 0.98), linear;
+          transition-timing-function: cubic-bezier(0.98, 0, 0.22, 0.98), linear;
+  will-change: transform, opacity;
+}
+
+.option:last-child {
+  margin-right: 0;
+}
+
+.option__indicator {
+  display: block;
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
+  -webkit-transition: inherit;
+  transition: inherit;
+  will-change: transform;
+  position: absolute;
+  bottom: 1.5em;
+  right: 0.5em;
+  left: 0.5em;
+}
+
+.option__indicator img {
+  width: 60%;
+  padding-left: 10%;
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+}
+
+.option-input {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  visibility: hidden;
+}
+
+.option__label {
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-weight: bold;
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
+  -webkit-transform: translateX(20%) scale(0.7);
+          transform: translateX(20%) scale(0.7);
+  -webkit-transition: inherit;
+  transition: inherit;
+  will-change: transform;
+}
+
+.option__label sub {
+  margin-left: 0.25em;
+  font-size: 0.4em;
+  display: inline-block;
+  vertical-align: 0.3em;
+}
+
+.option__label:after {
+  content: '';
+  display: block;
+  border: solid 2px #0c0c0c;
+  width: 100%;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: scaleX(0.2);
+          transform: scaleX(0.2);
+  -webkit-transition: inherit;
+  transition: inherit;
+  will-change: transform;
+}
+
+.option:last-child .option__label {
+  -webkit-transform: translateX(0%) scale(0.7);
+          transform: translateX(0%) scale(0.7);
+}
+
+.option:last-child .option__indicator {
+  -webkit-transform: translateX(-20%);
+          transform: translateX(-20%);
+}
+
+.option:last-child .option__indicator img {
+  width: 60%;
+  padding-left: 15%;
+}
+
+.option-input:checked ~ .option {
+  -webkit-transform: translateX(-16%) translateX(0.2em);
+          transform: translateX(-16%) translateX(0.2em);
+}
+
+.option-input:checked ~ .option .option__indicator {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.option-input:checked ~ .option .option__indicator img {
+  width: 60%;
+  padding-left: 30%;
+}
+
+.option-input:checked ~ .option .option__label {
+  -webkit-transform: translateX(40%) scale(0.7);
+          transform: translateX(40%) scale(0.7);
+}
+
+.option-input:first-child:checked ~ .option {
+  -webkit-transform: translateX(16%) translateX(-0.2em);
+          transform: translateX(16%) translateX(-0.2em);
+}
+
+.option-input:first-child:checked ~ .option .option__indicator {
+  -webkit-transform: translateX(-40%);
+          transform: translateX(-40%);
+}
+
+.option-input:first-child:checked ~ .option .option__indicator img {
+  width: 60%;
+  padding-left: 40%;
+}
+
+.option-input:first-child:checked ~ .option .option__label {
+  -webkit-transform: translateX(0%) scale(0.7);
+          transform: translateX(0%) scale(0.7);
+}
+
+.option-input:nth-child(1):checked ~ .option:nth-of-type(1) {
+  opacity: 1;
+  color: #e24301;
+  -webkit-box-shadow: 1em 0.4em 1.5em 0em #00000094;
+          box-shadow: 1em 0.4em 1.5em 0em #00000094;
+  z-index: 11;
+  background: #fff;
+}
+
+.option-input:nth-child(1):checked ~ .option:nth-of-type(1) .option__indicator {
+  color: #e24301;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.option-input:nth-child(1):checked ~ .option:nth-of-type(1) .option__indicator::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.option-input:nth-child(1):checked ~ .option:nth-of-type(1) .option__indicator img {
+  width: 90%;
+  padding-left: 0;
+}
+
+.option-input:nth-child(1):checked ~ .option:nth-of-type(1) .option__label,
+.option-input:nth-child(1):checked ~ .option:nth-of-type(1) .option__label::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  color: #e24301;
+}
+
+.option-input:nth-child(2):checked ~ .option:nth-of-type(2) {
+  opacity: 1;
+  color: #e24301;
+  -webkit-box-shadow: -1em 0.4em 1.5em 0em #00000094;
+          box-shadow: -1em 0.4em 1.5em 0em #00000094;
+  z-index: 11;
+  background: #fff;
+}
+
+.option-input:nth-child(2):checked ~ .option:nth-of-type(2) .option__indicator {
+  color: #e24301;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.option-input:nth-child(2):checked ~ .option:nth-of-type(2) .option__indicator::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.option-input:nth-child(2):checked ~ .option:nth-of-type(2) .option__indicator img {
+  width: 90%;
+  padding-left: 0;
+}
+
+.option-input:nth-child(2):checked ~ .option:nth-of-type(2) .option__label,
+.option-input:nth-child(2):checked ~ .option:nth-of-type(2) .option__label::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  color: #e24301;
+}
+
+.nextButton {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 15%;
+          flex: 0 0 15%;
+  text-align: center;
+  height: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: .2em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #2e2e2e;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-weight: 500;
+  -webkit-clip-path: polygon(100% 0%, 100% 75%, 50% 100%, 0 75%, 0% 0);
+          clip-path: polygon(100% 0%, 100% 75%, 50% 100%, 0 75%, 0% 0);
+  -webkit-transition: 1.5s ease all;
+  transition: 1.5s ease all;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.nextButton a {
+  color: #bdbdbd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 99%;
+          flex: 1 0 99%;
+  height: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.nextButtonHidden {
+  background-color: #bdbdbd;
+  color: gainsboro;
+  -webkit-transition: 1.5s ease all;
+  transition: 1.5s ease all;
+  pointer-events: none;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.nextButtonHidden a {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nextButtonHidden a:before {
+  display: block;
+  white-space: pre-line;
+  content: 'STEP ONE: TRAVEL DETAILS \A  COMPLETE FORM TO PROCEED';
+  color: #2e2e2e;
+  opacity: 1;
+  text-align: left;
+  padding: 1em 2em;
+  font-size: .5em;
+  font-weight: 700;
+  position: absolute;
+}
+
+.buttonHidden {
+  opacity: .3;
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+  pointer-events: none;
+}
+
+.buttonShow {
+  opacity: 1;
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+  pointer-events: initial;
+}
+
+.buttonGone {
+  opacity: 0;
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+  pointer-events: none;
+}
+
 * {
   margin: 0;
   padding: 0;
   text-decoration: none;
+  text-indent: 0;
+  list-style: none;
 }
 
 body {
-  font-family: roboto,Arial, Helvetica, sans-serif;
+  font-family: 'Heebo', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Heebo', sans-serif;
 }
 
 .app {
@@ -28,7 +390,7 @@ body {
 }
 
 .app .layer header {
-  height: 4em;
+  height: 10%;
 }
 
 .app .layer main {
@@ -81,8 +443,8 @@ body {
 }
 
 .app .layer footer {
-  height: 2em;
-  border: thin black solid;
+  height: 0em;
+  border: 0 black solid;
   background-color: #333;
 }
 
@@ -94,30 +456,68 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding-bottom: 10em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 100vh;
 }
 
-.formOption.vfo1 {
+.tripStages .steps {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 75%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 10%;
+          flex: 1 0 10%;
+  font-size: 2.5em;
 }
 
-.formOption.vfo2 {
+.tripStages .steps div {
+  height: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  width: 2em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #cdcdcd;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: .3em;
+}
+
+.tripStages h1 {
+  text-align: center;
+  color: #2e2e2e;
+  font-weight: 300;
+  line-height: 1.2;
+  font-size: 1.5em;
+}
+
+.trip3 .wanakaMap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-image: url("assets/explore-wanaka.jpg");
+  background-size: 150%;
+  background-position: bottom;
+  background-repeat: no-repeat;
 }
 
 .layer {
@@ -174,27 +574,6 @@ body {
   position: relative;
 }
 
-.buttonHidden {
-  opacity: .5;
-  -webkit-transition: .5s ease all;
-  transition: .5s ease all;
-  pointer-events: none;
-}
-
-.buttonShow {
-  opacity: 1;
-  -webkit-transition: .5s ease all;
-  transition: .5s ease all;
-  pointer-events: initial;
-}
-
-.buttonGone {
-  opacity: 0;
-  -webkit-transition: .5s ease all;
-  transition: .5s ease all;
-  pointer-events: none;
-}
-
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -223,23 +602,23 @@ body {
 }
 
 .layerMain .middle {
-  color: #8c8c8c;
+  color: gainsboro;
 }
 
 .color-scheme > :nth-child(4n+1) {
-  background-color: #f2f2f2;
+  background-color: #e24301;
 }
 
 .color-scheme > :nth-child(4n+2) {
-  background-color: #8c8c8c;
+  background-color: gainsboro;
 }
 
 .color-scheme > :nth-child(4n+3) {
-  background-color: #595959;
+  background-color: #bdbdbd;
 }
 
 .color-scheme > :nth-child(4n+4) {
-  background-color: #262626;
+  background-color: #2e2e2e;
 }
 
 .layerMain {
@@ -249,6 +628,115 @@ body {
 .features .feature {
   font-size: 2em;
   padding: .5em;
+}
+
+.headerNav {
+  -webkit-transition: 1.7s ease all;
+  transition: 1.7s ease all;
+  height: 5em;
+  position: absolute;
+  z-index: 11;
+  width: 5em;
+  background-color: #0c0c0c;
+  color: gainsboro;
+  -webkit-transition: ease 1s all;
+  transition: ease 1s all;
+  -webkit-clip-path: polygon(0 0, 100% 0, 50% 50%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 50% 50%, 0% 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: .5em;
+}
+
+.headerNav .appNav {
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+  pointer-events: none;
+  height: 0;
+  opacity: 0;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 3;
+  font-size: 1.3em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.headerNav .appNav a {
+  color: gainsboro;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.headerNav img {
+  opacity: 0;
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+}
+
+.headerNav .menuButton {
+  z-index: 99;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: -.2em;
+  right: .6em;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 2em;
+  height: 2em;
+  font-size: 2.5em;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+.navOpen {
+  pointer-events: initial;
+  height: 100%;
+  position: absolute;
+  z-index: 11;
+  width: 100%;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.navOpen .appNav {
+  opacity: 1;
+  height: 75%;
+  -webkit-transition: 3.5s ease all;
+  transition: 3.5s ease all;
+}
+
+.navOpen img {
+  opacity: 1;
+}
+
+.navOpen .menuButton {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  top: 83%;
+  right: 0;
+  -webkit-transition: 1.5s ease all;
+  transition: 1.5s ease all;
 }
 
 .nav {
@@ -263,7 +751,7 @@ body {
   color: #fafa9f;
 }
 
-.formOption {
+.formGrp {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -271,6 +759,59 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 70%;
+          flex: 1 0 70%;
+}
+
+.formGrp .formOption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: .5em 2em;
+}
+
+.formGrp .formOption label {
+  font-weight: 300;
+  text-align: center;
+  font-size: 1.3em;
+  color: #2e2e2e;
+}
+
+.formGrp .formOption input {
+  height: 2em;
+  border-radius: .4em;
+  border: 0;
+  background-color: #2e2e2e;
+  font-weight: 300;
+  text-align: center;
+  font-size: 1.3em;
+  color: gainsboro;
+}
+
+.formGrp .formOption input:placeholder {
+  font-weight: 500;
+  color: gainsboro;
+  font-size: 1.3em;
+}
+
+.formGrp .formOption select {
+  height: 2em;
+  border-radius: .4em;
+  border: 0;
+  background-color: #2e2e2e;
+  font-weight: 300;
+  text-align-last: right;
+  direction: rtl;
+  text-align-last: center;
+  padding-right: 0em;
+  font-size: 1.5em;
+  text-transform: capitalize;
+  color: gainsboro;
 }
 
 .transportForm {
