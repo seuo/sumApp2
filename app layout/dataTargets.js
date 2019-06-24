@@ -50,41 +50,45 @@ $(function(){
        
 
         $('[data-targetVehicle1]').on('click',function(){
+            $('.b2').removeClass('nextButtonHidden2');
             if($('#Input-motorbike').val()=='motorbike') {
                 $(".motorbikeClassGrp").addClass('radioButtonShow'); 
-                $('.b1').removeClass('nextButtonHidden');
-            }
-            else {
-                $(".motorbikeClassGrp").removeClass('radioButtonShow'); 
+                $(".economyClassGrp").removeClass('radioButtonShow');
+                $(".mediumClassGrp").removeClass('radioButtonShow'); 
+                $(".motorHomeGrp").removeClass('radioButtonShow'); 
+                
             }
 
         });
         $('[data-targetVehicle2]').on('click',function(){
-
+            $('.b2').removeClass('nextButtonHidden2');
             if($('#Input-smallCar').val()=='smallCar') {
                 $(".economyClassGrp").addClass('radioButtonShow'); 
-            }
-            else {
-                $(".economyClassGrp").removeClass('radioButtonShow'); 
+                $(".motorbikeClassGrp").removeClass('radioButtonShow');
+                $(".mediumClassGrp").removeClass('radioButtonShow'); 
+                $(".motorHomeGrp").removeClass('radioButtonShow'); 
+                
             }
 
         });
         $('[data-targetVehicle3]').on('click',function(){
-
+            $('.b2').removeClass('nextButtonHidden2');
             if($('#Input-largeCar').val()=='largeCar') {
                 $(".mediumClassGrp").addClass('radioButtonShow'); 
-            }
-            else {
-                $(".mediumClassGrp").removeClass('radioButtonShow'); 
+                $(".economyClassGrp").removeClass('radioButtonShow');
+                $(".motorbikeClassGrp").removeClass('radioButtonShow'); 
+                $(".motorHomeGrp").removeClass('radioButtonShow'); 
             }
 
         });
         $('[data-targetVehicle4]').on('click',function(){
+            $('.b2').removeClass('nextButtonHidden2');
             if($('#Input-motorHome').val()=='motorHome') {
                 $(".motorHomeGrp").addClass('radioButtonShow'); 
-            }
-            else {
-                $(".motorHomeGrp").removeClass('radioButtonShow'); 
+                $(".economyClassGrp").removeClass('radioButtonShow');
+                $(".mediumClassGrp").removeClass('radioButtonShow'); 
+                $(".motorbikeClassGrp").removeClass('radioButtonShow'); 
+            
             }
         });
 

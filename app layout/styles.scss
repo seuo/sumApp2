@@ -4,7 +4,7 @@ $color-2: rgb(220, 220, 220);
 $color-3: rgb(189, 189, 189);
 $color-4: rgb(46, 46, 46);
 $color-5: rgba(12,12,12, 1);
-$color-6: rgb(226, 68, 1);
+$color-6: rgb(159, 53, 21);
 $color-7: rgb(74, 116, 118);
 $color-8: rgb(66, 100, 102);
 
@@ -265,6 +265,7 @@ h1,h2,h3,h4,h5 {
     justify-content: flex-end;
     img {
         width: 70vw;
+        padding-right: 10vw;
     }
     .left {
         font-size:1.5em;
@@ -295,6 +296,7 @@ h1,h2,h3,h4,h5 {
     height: 12%;
     img {
             width: 70vw;
+            padding-right: 10vw;
         }
 }
 
@@ -302,7 +304,7 @@ h1,h2,h3,h4,h5 {
 
 .color-scheme {
     >:nth-child(4n+1){
-        background-color:$color-1;
+        background-color:$color-6;
     }
     >:nth-child(4n+2){
         background-color:$color-2;
@@ -338,7 +340,6 @@ h1,h2,h3,h4,h5 {
     z-index: 11;
     width: 5em;
     // border-radius: 0 0 100% 0%;
-    background-color:$color-5;
     color:$color-2;
     transition:ease 1s all;
     clip-path: polygon(0 0, 100% 0, 50% 50%, 0% 100%);
@@ -390,6 +391,7 @@ h1,h2,h3,h4,h5 {
     position: absolute;
     z-index: 11;
     width: 100%;
+    background-color:$color-5;
     // border-radius: 0;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 

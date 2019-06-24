@@ -88,7 +88,7 @@
     transform-origin: left bottom;
     transition: inherit;
     will-change: transform;
-    position: absolute;
+    // position: absolute;
     bottom: 1.5em;
     right: 0.5em;
     left: 0.5em;
@@ -115,18 +115,19 @@
     text-transform: uppercase;
     font-size: 1.5em;
     font-weight: bold;
-    
+    line-height: 1;
     transform-origin: left bottom;
     transform: translateX(20%) scale(0.7);
     transition: inherit;
     will-change: transform;
   
-    sub { 
-      margin-left: 0.25em;
-      font-size: 0.4em;
-      display: inline-block; 
-      vertical-align: 0.3em;
-    }
+     sub {
+      margin-left: 0;
+      font-size: 0.45em;
+      display: inline-block;
+      vertical-align: 0;
+      bottom: 0em;
+  }
     
     &:after {
       content: '';
@@ -183,7 +184,7 @@
     background: #fff;
     .option__indicator {color:$color-1; transform: translateX(0); &::after { transform: scale(1); } 
     img {
-        width: 90%;
+        width: 70%;
         padding-left: 0;
     }
 }
@@ -198,7 +199,7 @@
     background: #fff;
     .option__indicator {color:$color-1; transform: translateX(0); &::after { transform: scale(1); } 
     img {
-        width: 90%;
+        width: 70%;
         padding-left: 0;
     }
 }
@@ -208,7 +209,7 @@
   }
 
   .nextButton {
-    flex: 1 0 10%;
+    flex: 0 0 10%;
     text-align: center;
     height: 100%;
     justify-content: flex-end;
@@ -260,6 +261,28 @@
         font-weight:700;
         position: absolute;
     }
+}
+.nextButtonHidden2 {
+  background-color:$color-3;
+  color:$color-2;
+  transition:1.5s ease all;
+  pointer-events:none;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  a {
+      justify-content: space-between;
+  }
+  a:before{
+      display: block;
+      white-space: pre-line;
+      content:'STEP TWO: CHOOSE YOUR PREFERRED\A  MODE OF TRANSPORT TO PROCEED';
+      color:$color-4;
+      opacity:1;
+      text-align: left;
+      padding:1em 2em;
+      font-size:.5em;
+      font-weight:700;
+      position: absolute;
+  }
 }
 
 .buttonHidden {
