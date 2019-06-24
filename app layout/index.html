@@ -12,11 +12,24 @@
 <body>
 	
 	<div class="app">
+
 			<div class="layer layerMain">
+					<nav class="headerNav">
+							<div class="menuButton"><i class="fas fa-ellipsis-v"></i></div>
+							<div class="middle"><img src="assets/wanaka-logo.png" alt="">
+								<ul class="appNav">
+										<li class="link1"><a href="#">HOME</a></li>
+										<li><a href="#">PLAN YOUR TRIP</a></li>
+										<li><a href="#">10 MUST DO'S IN WANAKA</a></li>
+										<li><a href="#">ACCOMMODATION</a></li>
+										<li><a href="#">CONTACT US</a></li>
+									</ul>
+								</div>
+				</nav>
 				<header class="header">
-						<div class="left"><i class="fas fa-align-left" data-target=".nav-container"></i></div>
-						<div class="middle"><img src="assets/wanaka-logo.png" alt=""></div>
-						<div class="right"> <i class="fas fa-align-right"></i></div>
+						
+						<div><img src="assets/wanaka-logo.png" alt=""></div>
+						
 				</header>
 				<main>
 					<div class="planYourTrip">
@@ -47,21 +60,12 @@
 					<footer></footer>
 				</div>
 
-				<div class="layer layer1 move-right">
-					
-					<nav class="headerNav">
-								<div class="menuButton"><i class="fas fa-ellipsis-v"></i></div>
-								<div class="middle"><img src="assets/wanaka-logo.png" alt="">
-									<ul class="appNav">
-											<li><a href="">HOME</a></li>
-											<li><a href="">PLAN YOUR TRIP</a></li>
-											<li><a href="">10 MUST DO'S IN WANAKA</a></li>
-											<li><a href="">ACCOMMODATION</a></li>
-											<li><a href="">CONTACT US</a></li>
-										</ul>
-									</div>
-					</nav>
-
+				<div class="layer layer1 fold">
+						<header class="header">
+								
+								<div><img src="assets/wanaka-logo.png" alt=""></div>
+								
+						</header>
 					<main>
 						<form action="" method="post" class="transportForm" id="tripPlanner">
 							<div class="tripStages trip1">
@@ -120,7 +124,7 @@
 							<div class="progBar bar3" data-clearstage3=".transportForm">RENTALS</div>
 							<div class="progBar bar4" data-clearstage4=".transportForm">ITINERARY</div>
 					</div>
-							<div class="nextButton"><a href="#" data-targetstage1=".transportForm" data-clearstage=".transportForm">NEXT</a></div>	
+							<div class="nextButton b1"><a href="#" data-targetstage1=".transportForm" data-clearstage=".transportForm">NEXT</a></div>	
 						</div>
 						<div class="tripStages trip2">
 								<div class="steps">
@@ -131,13 +135,13 @@
 												<div class="option-container">
 										<input class="option-input"  type="radio" id="Input-motorbike" name="vehicle" value="motorbike">
 										<input class="option-input"  type="radio" id="Input-smallCar" name="vehicle" value="smallCar" > 
-										<label class="option motorbike" for="Input-motorbike" id="motorbike" data-targetVehicle1=".motorbikeClassGrp">
+										<label class="option motorbike" for="Input-motorbike" id="motorbike" data-targetVehicle1=".motorbikeClassGrp" data-targetNext=".b2">
 												<span class="option__indicator"><img src="assets/scooter.png" alt=""></span>
 												<span class="option__label">
 														Motor Bike<sub></sub>
 												</span>
 											  </label>
-											  <label class="option smallCar" for="Input-smallCar" id="smallCar" data-targetVehicle2=".economyClassGrp">
+											  <label class="option smallCar" for="Input-smallCar" id="smallCar" data-targetVehicle2=".economyClassGrp" data-targetNext=".b2">
 													<span class="option__indicator"><img src="assets/smallcar.png" alt=""></span>
 													<span class="option__label">
 															Small Car<sub></sub>
@@ -149,14 +153,14 @@
 													<div class="option-container">
 										<input class="option-input"  type="radio" id="Input-largeCar" name="vehicle" value="largeCar"> 
 										<input class="option-input"  type="radio" id="Input-motorHome" name="vehicle" value="motorHome"> 
-										<label class="option" for="Input-largeCar"  id="largeCar" data-targetVehicle3=".mediumClassGrp">
+										<label class="option" for="Input-largeCar"  id="largeCar" data-targetVehicle3=".mediumClassGrp" data-targetNext=".b2">
 												<span class="option__indicator"><img src="assets/largecar.png" alt=""></span>
 												<span class="option__label">
 														Large Car<sub></sub>
 												</span>
 											  </label>
 
-											  <label class="option" for="Input-motorHome" id="motorHome" data-targetVehicle4=".motorHomeGrp">
+											  <label class="option" for="Input-motorHome" id="motorHome" data-targetVehicle4=".motorHomeGrp" data-targetNext=".b2">
 												<span class="option__indicator"><img src="assets/motorhome.png" alt=""></span>
 												<span class="option__label">
 												Motor Home<sub></sub>
@@ -172,7 +176,7 @@
 							<div class="progBar bar3" data-clearstage3=".transportForm">RENTALS</div>
 							<div class="progBar bar4" data-clearstage4=".transportForm">ITINERARY</div>
 					</div>
-								<div class="nextButton"><a href="#" data-targetstage2=".transportForm" data-clearstage=".transportForm">NEXT</a></div>	
+								<div class="nextButton b2"><a href="#" data-targetstage2=".transportForm" data-clearstage=".transportForm">NEXT</a></div>	
 							</div>
 							<div class="tripStages trip3">
 									<div class="steps">
@@ -265,7 +269,7 @@
 									<div class="progBar bar3 activeBar" data-clearstage3=".transportForm">RENTALS</div>
 									<div class="progBar bar4" data-clearstage4=".transportForm">ITINERARY</div>
 							</div>
-								<div class="nextButton"><a href="#" data-targetstage3=".transportForm" data-clearstage=".transportForm">NEXT</a></div>	
+								<div class="nextButton b3"><a href="#" data-targetstage3=".transportForm" data-clearstage=".transportForm">NEXT</a></div>	
 							</div>
 							<div class="tripStages trip4">
 									<div class="steps">
@@ -281,7 +285,7 @@
 									<div class="progBar bar3" data-clearstage3=".transportForm">RENTALS</div>
 									<div class="progBar bar4 activeBar" data-clearstage4=".transportForm">ITINERARY</div>
 							</div>
-								<div class="nextButton"><a href="#" data-targetstage4=".transportForm" data-clearstage=".transportForm">NEXT</a></div>	
+								<div class="nextButton b4"><a href="#" data-targetstage4=".transportForm" data-clearstage=".transportForm">NEXT</a></div>	
 							</div>
 						</form></main>
 					<footer></footer>

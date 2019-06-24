@@ -3,17 +3,27 @@ $(function(){
         $('[data-target]').on('click',function(){
 
             var sLayer = $(this).data('target');
-            $(sLayer).addClass('current');
+            $(sLayer).addClass('unfold');
         });
 
         $('[data-dismiss]').on('click',function(){
 
             var sLayer = $(this).data('dismiss');
-            $(sLayer).removeClass('current');
+            $(sLayer).removeClass('unfold');
         });
   
         $('.menuButton').click( function() {
             $(".headerNav").toggleClass("navOpen");
+        });
+
+        $('.link1').click( function() {
+            if($(".layer1").hasClass("unfold")){
+                $(".layer1").removeClass('unfold');
+                $(".headerNav").toggleClass("navOpen");
+            }
+            else {
+                $(".headerNav").toggleClass("navOpen");
+            }
         } );
 
         $('[data-targetstage1]').on('click',function(){
@@ -37,10 +47,15 @@ $(function(){
         });
 
 
+       
 
         $('[data-targetVehicle1]').on('click',function(){
             if($('#Input-motorbike').val()=='motorbike') {
                 $(".motorbikeClassGrp").addClass('radioButtonShow'); 
+                $('.b1').removeClass('nextButtonHidden');
+            }
+            else {
+                $(".motorbikeClassGrp").removeClass('radioButtonShow'); 
             }
 
         });
@@ -49,7 +64,9 @@ $(function(){
             if($('#Input-smallCar').val()=='smallCar') {
                 $(".economyClassGrp").addClass('radioButtonShow'); 
             }
-
+            else {
+                $(".economyClassGrp").removeClass('radioButtonShow'); 
+            }
 
         });
         $('[data-targetVehicle3]').on('click',function(){
@@ -57,12 +74,22 @@ $(function(){
             if($('#Input-largeCar').val()=='largeCar') {
                 $(".mediumClassGrp").addClass('radioButtonShow'); 
             }
+            else {
+                $(".mediumClassGrp").removeClass('radioButtonShow'); 
+            }
 
         });
         $('[data-targetVehicle4]').on('click',function(){
             if($('#Input-motorHome').val()=='motorHome') {
                 $(".motorHomeGrp").addClass('radioButtonShow'); 
             }
+            else {
+                $(".motorHomeGrp").removeClass('radioButtonShow'); 
+            }
+        });
+
+        $('[data-targetNext]').on('click',function(){
+            $('.b1').removeClass('nextButtonHidden');
         });
 
 
@@ -100,12 +127,12 @@ $(function(){
             // If value is not empty
             if ($(this).val().length < 2) {
             // Hide the elementx
-                $('.nextButton').addClass('nextButtonHidden');
-                $('.nextButton').removeClass('buttonShow');
+                $('.b1').addClass('nextButtonHidden');
+                $('.b1').removeClass('buttonShow');
             } else {
             // Otherwise show it
-                $('.nextButton').removeClass('nextButtonHidden');
-                $('.nextButton').addClass('buttonShow');
+                $('.b1').removeClass('nextButtonHidden');
+                $('.b1').addClass('buttonShow');
             }
         }).keyup();
 

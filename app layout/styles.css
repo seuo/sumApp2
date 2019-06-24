@@ -276,9 +276,9 @@
 }
 
 .nextButton {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 10%;
-          flex: 0 0 10%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 10%;
+          flex: 1 0 10%;
   text-align: center;
   height: 100%;
   -webkit-box-pack: end;
@@ -423,7 +423,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .app .layer header {
-  height: 10%;
+  height: 12%;
 }
 
 .app .layer main {
@@ -505,7 +505,7 @@ h1, h2, h3, h4, h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 75%;
+  width: 100%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -536,10 +536,11 @@ h1, h2, h3, h4, h5 {
 
 .tripStages h1 {
   text-align: center;
-  color: #2e2e2e;
+  color: gainsboro;
   font-weight: 300;
   line-height: 1.2;
-  font-size: 1.5em;
+  font-size: 6vw;
+  padding: 1em;
 }
 
 .trip4 .wanakaMap {
@@ -623,11 +624,34 @@ h1, h2, h3, h4, h5 {
           flex-direction: column;
   -webkit-transition: all ease 1s;
   transition: all ease 1s;
+  background-color: #2e2e2e;
 }
 
 .layer {
   -webkit-transition: all ease 1s;
   transition: all ease 1s;
+}
+
+.fold {
+  -webkit-clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
+  opacity: 0;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  border-radius: 0em 0em 100em 0em;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
+.unfold {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  opacity: 1;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  border-radius: 0em 0em 0em 0em;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
 }
 
 .move-left {
@@ -650,6 +674,7 @@ h1, h2, h3, h4, h5 {
           transform: translate(0, -100vh);
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
+  background-color: #313131;
 }
 
 .tripStage2 {
@@ -657,6 +682,7 @@ h1, h2, h3, h4, h5 {
           transform: translate(0, -200vh);
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
+  background-color: #424242;
 }
 
 .tripStage3 {
@@ -664,6 +690,7 @@ h1, h2, h3, h4, h5 {
           transform: translate(0, -300vh);
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
+  background-color: #5a5a5a;
 }
 
 .tripStage4 {
@@ -671,6 +698,7 @@ h1, h2, h3, h4, h5 {
           transform: translate(0, -400vh);
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
+  background-color: #777777;
 }
 
 .currentStage {
@@ -688,8 +716,17 @@ h1, h2, h3, h4, h5 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: .5em;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #0c0c0c;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 12%;
+          flex: 0 0 12%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.header img {
+  width: 70vw;
 }
 
 .header .left {
@@ -710,6 +747,30 @@ h1, h2, h3, h4, h5 {
 
 .layerMain .middle {
   color: gainsboro;
+}
+
+.layer1 .header {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #0c0c0c;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 12%;
+          flex: 0 0 12%;
+  z-index: 5;
+  width: 100%;
+  position: absolute;
+  height: 12%;
+}
+
+.layer1 .header img {
+  width: 70vw;
 }
 
 .color-scheme > :nth-child(4n+1) {
@@ -740,7 +801,7 @@ h1, h2, h3, h4, h5 {
 .headerNav {
   -webkit-transition: 1.7s ease all;
   transition: 1.7s ease all;
-  height: 5em;
+  height: 10%;
   position: absolute;
   z-index: 11;
   width: 5em;
@@ -762,7 +823,6 @@ h1, h2, h3, h4, h5 {
 .headerNav .appNav {
   -webkit-transition: .5s ease all;
   transition: .5s ease all;
-  pointer-events: none;
   height: 0;
   opacity: 0;
   text-align: center;
@@ -896,7 +956,7 @@ h1, h2, h3, h4, h5 {
   height: 2em;
   border-radius: .4em;
   border: 0;
-  background-color: #2e2e2e;
+  background-color: #0c0c0c;
   font-weight: 300;
   text-align: center;
   font-size: 1.3em;
@@ -913,7 +973,7 @@ h1, h2, h3, h4, h5 {
   height: 2em;
   border-radius: .4em;
   border: 0;
-  background-color: #2e2e2e;
+  background-color: #0c0c0c;
   font-weight: 300;
   text-align-last: right;
   direction: rtl;

@@ -41,7 +41,7 @@ h1,h2,h3,h4,h5 {
         display: flex;
         flex-direction: column;
         header {
-            height: 10%;
+            height: 12%;
         }
         main{
             flex: 1 0 auto;
@@ -89,7 +89,7 @@ h1,h2,h3,h4,h5 {
         display: flex;
         align-self: flex-end;
         align-items: center;
-        width: 75%;
+        width: 100%;
         flex-direction: row;
         justify-content: space-around;
         flex: 1 0 10%;
@@ -106,12 +106,17 @@ h1,h2,h3,h4,h5 {
     }
     h1 {
         text-align: center;
-        color: $color-4;
+        color: $color-2;
         font-weight: 300;
         line-height: 1.2;
-        font-size: 1.5em;
+        font-size: 6vw;
+        padding:1em;
     }
    
+}
+
+.trip1 {
+
 }
 
 .trip4 {
@@ -169,19 +174,8 @@ h1,h2,h3,h4,h5 {
         z-index: 11;
     }
 }
-// .progress div:nth-child(1) {
-//     left:0%;
-// }
-// .progress div:nth-child(2) {
-//     left:25%;
-// }
-// .progress div:nth-child(3) {
-//     left:50%;
-// }
-// .progress div:nth-child(4) {
-//     left:75%;
-// }
-// layoutMove
+
+// animationModule
 
 .transportForm {
     position:absolute;
@@ -190,10 +184,27 @@ h1,h2,h3,h4,h5 {
     flex:1 0 90%;
     flex-direction:column;
     transition:all ease 1s;
+    background-color:$color-4;
 }
 
 .layer {
     transition:all ease 1s;
+}
+
+.fold {
+    clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
+    opacity:0;
+    transform-origin: top left;
+    border-radius:0em 0em 100em 0em;
+    transition:1s ease all;
+}
+
+.unfold {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity:1;
+    transform-origin: top left;
+    border-radius:0em 0em 0em 0em;
+    transition:1s ease all;
 }
 
 .move-left {
@@ -212,21 +223,26 @@ h1,h2,h3,h4,h5 {
 .tripStage1 {
     transform:translate(0,-100vh);
     transition:1s ease all;
+    background-color:#313131;
+    
 }
 
 .tripStage2 {
     transform:translate(0,-200vh);
     transition:1s ease all;
+    background-color:#424242;
 }
 
 .tripStage3 {
     transform:translate(0,-300vh);
     transition:1s ease all;
+    background-color:#5a5a5a;
 }
 
 .tripStage4 {
     transform:translate(0,-400vh);
     transition:1s ease all;
+    background-color:#777777;
 }
 
 .currentStage {
@@ -244,9 +260,12 @@ h1,h2,h3,h4,h5 {
 .header {
     display:flex;
     align-items:center;
-    padding:.5em;
-    background-color:rgba(0,0,0,.3);
-
+    background-color:$color-5;
+    flex: 0 0 12%;
+    justify-content: flex-end;
+    img {
+        width: 70vw;
+    }
     .left {
         font-size:1.5em;
     }
@@ -262,6 +281,21 @@ h1,h2,h3,h4,h5 {
 
 .layerMain .middle {
     color:$color-2 ;
+}
+
+.layer1 .header {
+    justify-content: flex-end;
+    display:flex;
+    align-items:center;
+    background-color:$color-5;
+    flex: 0 0 12%;
+    z-index: 5;
+    width: 100%;
+    position:absolute;
+    height: 12%;
+    img {
+            width: 70vw;
+        }
 }
 
 //colorModule
@@ -285,6 +319,7 @@ h1,h2,h3,h4,h5 {
     background-color:$color-5;
 }
 
+
 // featuresModule
 
 .features {
@@ -298,7 +333,7 @@ h1,h2,h3,h4,h5 {
 
 .headerNav {
     transition:1.7s ease all;
-    height: 5em;
+    height: 10%;
     position: absolute;
     z-index: 11;
     width: 5em;
@@ -312,7 +347,6 @@ h1,h2,h3,h4,h5 {
     padding: .5em;
     .appNav {
         transition:.5s ease all;
-        pointer-events: none;
         height:0;
         opacity: 0;
         text-align: center;
@@ -409,7 +443,7 @@ h1,h2,h3,h4,h5 {
             height: 2em;
             border-radius: .4em;
             border: 0;
-            background-color: $color-4;
+            background-color: $color-5;
             font-weight: 300;
             text-align: center;
             font-size: 1.3em;
@@ -425,7 +459,7 @@ h1,h2,h3,h4,h5 {
             height: 2em;
             border-radius: .4em;
             border: 0;
-            background-color: $color-4;
+            background-color: $color-5;
             font-weight: 300;
             text-align-last: right;
             direction: rtl;
