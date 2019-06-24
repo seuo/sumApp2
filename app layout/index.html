@@ -48,6 +48,7 @@
 				</div>
 
 				<div class="layer layer1 move-right">
+					
 					<nav class="headerNav">
 								<div class="menuButton"><i class="fas fa-ellipsis-v"></i></div>
 								<div class="middle"><img src="assets/wanaka-logo.png" alt="">
@@ -59,15 +60,12 @@
 											<li><a href="">CONTACT US</a></li>
 										</ul>
 									</div>
-
 					</nav>
+
 					<main>
 						<form action="" method="post" class="transportForm" id="tripPlanner">
 							<div class="tripStages trip1">
 								<div class="steps">
-									<div class="div" style="background-color:#fff;"><i class="fas fa-users"></i></div>
-									<div class="div"><i class="fas fa-car"></i></div>
-									<div class="div"><i class="fas fa-map-marked-alt"></i></div>
 								</div>
 									<div class="formGrp">
 							<h1>Please fill in the form below & we will work out your best mode of transport.</h1>
@@ -115,28 +113,31 @@
 									</select>
 								<span id="numDaysMessage"></span>
 							</div>
-						</div>	
+						</div>
+						<div class="progress">
+							<div class="progBar bar1 activeBar" data-clearstage1=".transportForm">TRIP<br>DETAILS</div>
+							<div class="progBar bar2" data-clearstage2=".transportForm">TRANSPORT</div>
+							<div class="progBar bar3" data-clearstage3=".transportForm">RENTALS</div>
+							<div class="progBar bar4" data-clearstage4=".transportForm">ITINERARY</div>
+					</div>
 							<div class="nextButton"><a href="#" data-targetstage1=".transportForm" data-clearstage=".transportForm">NEXT</a></div>	
 						</div>
 						<div class="tripStages trip2">
 								<div class="steps">
-										<div class="div"><i class="fas fa-users"></i></div>
-										<div class="div" style="background-color:#fff;"><i class="fas fa-car"></i></div>
-										<div class="div"><i class="fas fa-map-marked-alt"></i></div>
 									</div>
 								<h1>The best modes of travel for you are listed below. Please select your preffered vehicle. </h1>						
 								<div class="formOption vfo1">
 										<div class="option-group">
 												<div class="option-container">
 										<input class="option-input"  type="radio" id="Input-motorbike" name="vehicle" value="motorbike">
-										<input class="option-input"  type="radio" id="Input-smallCar" name="vehicle" value="smallCar"> 
-										<label class="option motorbike" for="Input-motorbike" id="motorbike">
+										<input class="option-input"  type="radio" id="Input-smallCar" name="vehicle" value="smallCar" > 
+										<label class="option motorbike" for="Input-motorbike" id="motorbike" data-targetVehicle1=".motorbikeClassGrp">
 												<span class="option__indicator"><img src="assets/scooter.png" alt=""></span>
 												<span class="option__label">
 														Motor Bike<sub></sub>
 												</span>
 											  </label>
-											  <label class="option smallCar" for="Input-smallCar" id="smallCar">
+											  <label class="option smallCar" for="Input-smallCar" id="smallCar" data-targetVehicle2=".economyClassGrp">
 													<span class="option__indicator"><img src="assets/smallcar.png" alt=""></span>
 													<span class="option__label">
 															Small Car<sub></sub>
@@ -148,14 +149,14 @@
 													<div class="option-container">
 										<input class="option-input"  type="radio" id="Input-largeCar" name="vehicle" value="largeCar"> 
 										<input class="option-input"  type="radio" id="Input-motorHome" name="vehicle" value="motorHome"> 
-										<label class="option" for="Input-largeCar"  id="largeCar">
+										<label class="option" for="Input-largeCar"  id="largeCar" data-targetVehicle3=".mediumClassGrp">
 												<span class="option__indicator"><img src="assets/largecar.png" alt=""></span>
 												<span class="option__label">
 														Large Car<sub></sub>
 												</span>
 											  </label>
-										  
-											  <label class="option" for="Input-motorHome" id="motorHome">
+
+											  <label class="option" for="Input-motorHome" id="motorHome" data-targetVehicle4=".motorHomeGrp">
 												<span class="option__indicator"><img src="assets/motorhome.png" alt=""></span>
 												<span class="option__label">
 												Motor Home<sub></sub>
@@ -165,29 +166,122 @@
 								</div>
 									<span id="VehicleValidation"></span>
 								</div>
-								<!-- <div class="formOption vfo2">		
-										<label></label>
-											<input type="radio" id="motorbike2" name="vehicle" value="motorbike"> Motor Bike<br>
-											<input type="radio" id="smallCar2" name="vehicle" value="smallCar"> Small Car<br>
-											<input type="radio" id="largeCar2" name="vehicle" value="largeCar"> Large Car<br>
-											<input type="radio" id="motorHome2" name="vehicle" value="motorHome"> Motor Home<br>
-										<span id="VehicleValidation"></span>
-								</div> -->
-
+								<div class="progress">
+							<div class="progBar bar1" data-clearstage1=".transportForm">TRIP<br>DETAILS</div>
+							<div class="progBar bar2 activeBar" data-clearstage2=".transportForm">TRANSPORT</div>
+							<div class="progBar bar3" data-clearstage3=".transportForm">RENTALS</div>
+							<div class="progBar bar4" data-clearstage4=".transportForm">ITINERARY</div>
+					</div>
 								<div class="nextButton"><a href="#" data-targetstage2=".transportForm" data-clearstage=".transportForm">NEXT</a></div>	
 							</div>
 							<div class="tripStages trip3">
 									<div class="steps">
-											<div class="div"><i class="fas fa-users"></i></div>
-											<div class="div"><i class="fas fa-car"></i></div>
-											<div class="div" style="background-color:#fff;"><i class="fas fa-map-marked-alt"></i></div>
+										</div>
+										<div class="formOption vfo1">
+												<div class="option-group motorbikeClassGrp">
+														<div class="option-container">
+												<input class="option-input"  type="radio" id="Input-motorbikeClass" name="vehicleClass" value="economyClass">
+												<input class="option-input"  type="radio" id="Input-motorbikeClass1" name="vehicleClass" value="economyClass1"> 
+		
+													<label class="option motorbikeClass" for="Input-motorbikeClass" id="motorbikeClass">
+														<span class="option__indicator"><img src="assets/scooter-class.png" alt=""></span>
+														<span class="option__label">
+																500 Watt Sprint<sub></sub>
+														</span>
+													  </label>
+													  <label class="option motorbikeClass1" for="Input-motorbikeClass1" id="motorbikeClass1">
+															<span class="option__indicator"><img src="assets/scooter-class1.png" alt=""></span>
+															<span class="option__label">
+																	Yamaha TMAX<sub></sub>
+															</span>
+													</label>
+													</div>
+													</div>
+										<div class="option-group economyClassGrp">
+												<div class="option-container">
+										<input class="option-input"  type="radio" id="Input-economyClass" name="vehicleClass" value="economyClass">
+										<input class="option-input"  type="radio" id="Input-economyClass1" name="vehicleClass" value="economyClass1"> 
+
+											<label class="option economyClass" for="Input-economyClass" id="economyClass">
+												<span class="option__indicator"><img src="assets/economy-class.png" alt=""></span>
+												<span class="option__label">
+														Toyota Vitz<sub></sub>
+												</span>
+											  </label>
+											  <label class="option economyClass1" for="Input-economyClass1" id="economyClass1">
+													<span class="option__indicator"><img src="assets/economy-class1.png" alt=""></span>
+													<span class="option__label">
+															Mazda Demio<sub></sub>
+													</span>
+											</label>
+											</div>
+											</div>
+											<div class="option-group mediumClassGrp">
+													<div class="option-container">
+											<input class="option-input"  type="radio" id="Input-mediumClass" name="vehicleClass" value="economyClass">
+											<input class="option-input"  type="radio" id="Input-mediumClass1" name="vehicleClass" value="economyClass1"> 
+	
+												<label class="option mediumClass" for="Input-mediumClass" id="mediumClass">
+													<span class="option__indicator"><img src="assets/medium-class.png" alt=""></span>
+													<span class="option__label">
+															Subaru Outback<sub></sub>
+													</span>
+												  </label>
+												  <label class="option mediumClass1" for="Input-mediumClass1" id="mediumClass1">
+														<span class="option__indicator"><img src="assets/medium-class1.png" alt=""></span>
+														<span class="option__label">
+																Toyota Previa<sub></sub>
+														</span>
+												</label>
+												</div>
+												</div>
+												<div class="option-group motorHomeGrp">
+														<div class="option-container">
+												<input class="option-input"  type="radio" id="Input-motorhomeClass" name="vehicleClass" value="economyClass">
+												<input class="option-input"  type="radio" id="Input-motorhomeClass1" name="vehicleClass" value="economyClass1"> 
+		
+													<label class="option motorhomeClass" for="Input-motorhomeClass" id="motorhomeClass">
+														<span class="option__indicator"><img src="assets/motorhome-class.png" alt=""></span>
+														<span class="option__label">
+																Maui Ultima<sub></sub>
+														</span>
+													  </label>
+													  <label class="option motorhomeClass1" for="Input-motorhomeClass1" id="motorhomeClass1">
+															<span class="option__indicator"><img src="assets/motorhome-class1.png" alt=""></span>
+															<span class="option__label">
+																	Maui Motorhome<sub></sub>
+															</span>
+													</label>
+													</div>
+													</div>
+										</div>
+								<div class="formSubmit">
+										<button type="submit" class="pure-button pure-button-primary">SUBMIT</button>
+										
+								</div>
+								<div class="progress">
+									<div class="progBar bar1" data-clearstage1=".transportForm">TRIP<br>DETAILS</div>
+									<div class="progBar bar2" data-clearstage2=".transportForm">TRANSPORT</div>
+									<div class="progBar bar3 activeBar" data-clearstage3=".transportForm">RENTALS</div>
+									<div class="progBar bar4" data-clearstage4=".transportForm">ITINERARY</div>
+							</div>
+								<div class="nextButton"><a href="#" data-targetstage3=".transportForm" data-clearstage=".transportForm">NEXT</a></div>	
+							</div>
+							<div class="tripStages trip4">
+									<div class="steps">
 										</div>
 								<div class="wanakaMap"></div> 
 								<div class="formSubmit">
 										<button type="submit" class="pure-button pure-button-primary">SUBMIT</button>
 										
 								</div>
-								<div class="nextButton"><a href="#" data-targetstage3=".transportForm" data-clearstage=".transportForm">NEXT</a></div>	
+								<div class="progress">
+									<div class="progBar bar1" data-clearstage1=".transportForm">TRIP<br>DETAILS</div>
+									<div class="progBar bar2" data-clearstage2=".transportForm">TRANSPORT</div>
+									<div class="progBar bar3" data-clearstage3=".transportForm">RENTALS</div>
+									<div class="progBar bar4 activeBar" data-clearstage4=".transportForm">ITINERARY</div>
+							</div>
+								<div class="nextButton"><a href="#" data-targetstage4=".transportForm" data-clearstage=".transportForm">NEXT</a></div>	
 							</div>
 						</form></main>
 					<footer></footer>
@@ -215,7 +309,9 @@
 		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="script.js"></script>
+	<script src="anime.min.js"></script>
+	<script src="dataTargets.js"></script>
+	<script src="animTargets.js"></script>
 	<!-- <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
 	<script src="jquery.mask.js"></script> -->
 

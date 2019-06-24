@@ -4,6 +4,9 @@ $color-2: rgb(220, 220, 220);
 $color-3: rgb(189, 189, 189);
 $color-4: rgb(46, 46, 46);
 $color-5: rgba(12,12,12, 1);
+$color-6: rgb(226, 68, 1);
+$color-7: rgb(74, 116, 118);
+$color-8: rgb(66, 100, 102);
 
 @import "_input.scss";
 
@@ -81,6 +84,7 @@ h1,h2,h3,h4,h5 {
     flex-direction: column;
     justify-content: center;
     height: 100vh;
+    padding: .5em;
     .steps {
         display: flex;
         align-self: flex-end;
@@ -110,7 +114,7 @@ h1,h2,h3,h4,h5 {
    
 }
 
-.trip3 {
+.trip4 {
     .wanakaMap {
         display: flex;
         width: 100%;
@@ -122,9 +126,71 @@ h1,h2,h3,h4,h5 {
     }
 }
 
+// progressModule
 
+.progress {
+    width: 100%;
+    height: 3em;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 9;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: flex-end;
+    flex: 1 0 1%;
 
+    .progBar {
+        background-color: $color-5;
+        width: 30%;
+        height: 3.5em;
+        border-radius:.2em;
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        // position:absolute;
+        // clip-path: polygon(50% 0%, 84% 40%, 84% 100%, 0 100%, 0% 38%);
+        text-align:center;
+        line-height:1.2;
+        color:$color-2;
+        font-size:11px;
+        transition:1s ease all;
+    }
+
+    .activeBar {
+        background-color: $color-6;
+        // height: 3.5em;
+        color:$color-2;
+        font-size:11px;
+        // clip-path: polygon(50% 0%, 90% 38%, 100% 100%, 3% 100%, 10% 38%);
+        box-shadow: inset 0em 0em 3em 0px #0000008c;
+        // transform: scale(1.1)translateX(-10%);
+        z-index: 11;
+    }
+}
+// .progress div:nth-child(1) {
+//     left:0%;
+// }
+// .progress div:nth-child(2) {
+//     left:25%;
+// }
+// .progress div:nth-child(3) {
+//     left:50%;
+// }
+// .progress div:nth-child(4) {
+//     left:75%;
+// }
 // layoutMove
+
+.transportForm {
+    position:absolute;
+    height:400vh;
+    display:flex;
+    flex:1 0 90%;
+    flex-direction:column;
+    transition:all ease 1s;
+}
 
 .layer {
     transition:all ease 1s;
@@ -142,10 +208,6 @@ h1,h2,h3,h4,h5 {
     transform:translate(0,0);
 }
 
-.transportForm {
-    position:absolute;
-    height:300vh;
-}
 
 .tripStage1 {
     transform:translate(0,-100vh);
@@ -159,6 +221,11 @@ h1,h2,h3,h4,h5 {
 
 .tripStage3 {
     transform:translate(0,-300vh);
+    transition:1s ease all;
+}
+
+.tripStage4 {
+    transform:translate(0,-400vh);
     transition:1s ease all;
 }
 
@@ -327,6 +394,7 @@ h1,h2,h3,h4,h5 {
     display: flex;
     flex-direction: column;
     flex: 1 0 70%;
+    justify-content: center;
     .formOption {
         display:flex;
         flex-direction:column;
@@ -370,13 +438,6 @@ h1,h2,h3,h4,h5 {
     }
 }
 
-
-.transportForm  {
-    display:flex;
-    flex:1 0 90%;
-    // padding:0 10% 0 10%;
-    flex-direction:column;
-}
 
 // miscModule
 

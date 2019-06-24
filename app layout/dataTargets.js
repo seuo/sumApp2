@@ -1,10 +1,5 @@
 $(function(){
-    $('#radios').radiosToSlider({
-        animation: true,
-    });
 
-    $(function(){
-        
         $('[data-target]').on('click',function(){
 
             var sLayer = $(this).data('target');
@@ -17,16 +12,9 @@ $(function(){
             $(sLayer).removeClass('current');
         });
   
-    });
-
-
-    $(function(){
         $('.menuButton').click( function() {
             $(".headerNav").toggleClass("navOpen");
         } );
-    });
-    $(function(){
-
 
         $('[data-targetstage1]').on('click',function(){
             var sForm = $(this).data('targetstage1');
@@ -50,6 +38,34 @@ $(function(){
 
 
 
+        $('[data-targetVehicle1]').on('click',function(){
+            if($('#Input-motorbike').val()=='motorbike') {
+                $(".motorbikeClassGrp").addClass('radioButtonShow'); 
+            }
+
+        });
+        $('[data-targetVehicle2]').on('click',function(){
+
+            if($('#Input-smallCar').val()=='smallCar') {
+                $(".economyClassGrp").addClass('radioButtonShow'); 
+            }
+
+
+        });
+        $('[data-targetVehicle3]').on('click',function(){
+
+            if($('#Input-largeCar').val()=='largeCar') {
+                $(".mediumClassGrp").addClass('radioButtonShow'); 
+            }
+
+        });
+        $('[data-targetVehicle4]').on('click',function(){
+            if($('#Input-motorHome').val()=='motorHome') {
+                $(".motorHomeGrp").addClass('radioButtonShow'); 
+            }
+        });
+
+
         $('[data-clearstage1]').on('click',function(){
             if ($(".transportForm").hasClass('tripStage1')) {
                 $(".transportForm").removeClass('tripStage1');
@@ -61,6 +77,21 @@ $(function(){
                 $(".transportForm").removeClass('tripStage3');
             }
 
+        });
+        $('[data-clearstage2]').on('click',function(){
+            if ($(".transportForm").hasClass('tripStage2')) {
+                $(".transportForm").removeClass('tripStage2');
+            }
+            if ($(".transportForm").hasClass('tripStage3')) {
+                $(".transportForm").removeClass('tripStage3');
+            }
+
+        });
+
+        $('[data-clearstage3]').on('click',function(){
+            if ($(".transportForm").hasClass('tripStage3')) {
+                $(".transportForm").removeClass('tripStage3');
+            }
         });
 
 
@@ -78,7 +109,6 @@ $(function(){
             }
         }).keyup();
 
-        // if($(this).val()<11 && $("#smallCar").hasClass("buttonShow")){
 
         $('#numPeople,#numDays').click(function() {
     
@@ -164,5 +194,5 @@ $(function(){
 
 
         }).click();
-    });
+    
 });
