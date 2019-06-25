@@ -74,31 +74,99 @@
 									<div class="formGrp">
 							<h1>Please fill in the form below & we will work out your best mode of transport.</h1>
 										
-							<div class="formOption fo1">		
+							<!-- <div class="formOption fo1">		
 								<label></label>
 								<input type="text" name="firstName" id="firstname" placeholder="Full Name"/>
 								<span id="firstNameMessage"></span>
-							</div>
-							<div class="formOption fo2">	    
-								<label>How many people?</label>
-								<select name="numberPeople" id="numPeople">
+							</div> -->
+							<div class="formOption fo2">
+									
+								<input type="text" class="form-control form-control-sm" id="datepicker" placeholder="Select your travel days"/>
+								<p id="daysTravel">&nbsp;</p>
+								<!-- <select name="numberPeople" id="numPeople">
 									<option value="1">One person</option>
 									<option value="2">Two people</option>
 									<option value="3">Three people</option>
 									<option value="4">Four people</option>
 									<option value="5">Five people</option>
 									<option value="6">Six people</option>
-									<!-- <option value="7">7</option>
-									<option value="8">8</option>
-									<option value="9">9</option>
-									<option value="10">10</option>
-									<option value="11">11</option>
-									<option value="12">12</option> -->
-								</select>
+								</select> -->
 							</div>
 							<div class="formOption fo3">
-								<label>How many days travelling?</label>
-								<select name="numberDays" id="numDays">
+								<label>How many people?</label>
+
+							
+								<div class="option-group">
+										<div class="option-container">
+							<input class="option-input formPeeps"  type="radio" id="numPeople1" name="numberPeople" value="1"> 
+							<input class="option-input formPeeps"  type="radio" id="numPeople2" name="numberPeople" value="2"> 
+
+							<label class="option" for="numPeople1"  id="numPeople">
+									<span class="option__indicator"><img src="" alt=""></span>
+									<span class="option__label">
+											1 Person<sub></sub>
+									</span>
+								  </label>
+
+								  <label class="option" for="numPeople2" id="numPeople">
+									<span class="option__indicator"><img src="" alt=""></span>
+									<span class="option__label">
+											2 People<sub></sub>
+									</span>
+								  </label>
+						</div>
+					</div>
+									<div class="option-group">
+											<div class="option-container">
+								<input class="option-input formPeeps"  type="radio" id="numPeople3" name="numberPeople" value="3"> 
+								<input class="option-input formPeeps"  type="radio" id="numPeople4" name="numberPeople" value="4"> 
+
+								<label class="option" for="numPeople3"  id="numPeople">
+										<span class="option__indicator"><img src="" alt=""></span>
+										<span class="option__label">
+												3 People<sub></sub>
+										</span>
+									  </label>
+
+									  <label class="option" for="numPeople4" id="numPeople">
+										<span class="option__indicator"><img src="" alt=""></span>
+										<span class="option__label">
+												4 People<sub></sub>
+										</span>
+									  </label>
+							</div>
+						</div>
+								<div class="option-group">
+										<div class="option-container">
+							<input class="option-input formPeeps"  type="radio" id="numPeople5" name="numberPeople" value="5"> 
+							<input class="option-input formPeeps"  type="radio" id="numPeople6" name="numberPeople" value="6"> 
+
+							<label class="option" for="numPeople5"  id="numPeople">
+									<span class="option__indicator"><img src="" alt=""></span>
+									<span class="option__label">
+											5 People<sub></sub>
+									</span>
+								</label>
+
+								<label class="option" for="numPeople6" id="numPeople">
+									<span class="option__indicator"><img src="" alt=""></span>
+									<span class="option__label">
+											6 People<sub></sub>
+									</span>
+								</label>
+						</div>
+					</div>
+
+								
+								<!-- <select name="numberPeople" id="numPeople">
+									<option value="1">One person</option>
+									<option value="2">Two people</option>
+									<option value="3">Three people</option>
+									<option value="4">Four people</option>
+									<option value="5">Five people</option>
+									<option value="6">Six people</option>
+								</select> -->
+								<!-- <select name="numberDays" id="numDays">
 										<option value="1">One day travel</option>
 										<option value="2">Two days travel</option>
 										<option value="3">Three days travel</option>
@@ -114,7 +182,7 @@
 										<option value="13">Thirteen days travel</option>
 										<option value="14">Fourteen days travel</option>
 										<option value="15">Fifteen days travel</option>
-									</select>
+									</select> -->
 								<span id="numDaysMessage"></span>
 							</div>
 						</div>
@@ -269,6 +337,7 @@
 							</div>
 							<div class="tripStages trip4">
 									<div class="steps">
+											<p id="daysTravelling">1</p>
 										</div>
 								<div class="wanakaMap"></div> 
 								<div class="formSubmit">
@@ -309,9 +378,11 @@
 		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="anime.min.js"></script>
 	<script src="dataTargets.js"></script>
 	<script src="animTargets.js"></script>
+	<script src="plugins/anime.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+	<script src="plugins/lightpick.js"></script>
 	<!-- <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
 	<script src="jquery.mask.js"></script> -->
 

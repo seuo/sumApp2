@@ -132,58 +132,21 @@ $(function(){
 
         // full name input for next
 
-        // $('#firstname').keyup(function() {
-        //     if ($(this).val().length < 2) {
-        //         $('.b1').addClass('nextButtonHidden');
-        //         $('.b1').removeClass('buttonShow');
-        //     } else {
-        //         $('.b1').removeClass('nextButtonHidden');
-        //         $('.b1').addClass('buttonShow');
-        //     }
-        // }).keyup();
-        // var sPeeps = $('input[name=numberPeople]:checked').val();
-        // $('#numPeople').on(function() {
-        //     $(this).prop( "checked", true );
-        //     console.log(sPeeps);
-        // }).click();
-
-        // $(".formPeeps").click('change', function () {
-        //     var sPeeps = $(this).val();
-        //     alert(s);
-        //     console.log(sPeeps);
-        // });
-
-        // var sPeeps = $("input[name=numberPeople]").val();
-        
-            var picker = new Lightpick({ field: document.getElementById('datepicker'),
-            singleDate: false,
-            repick: true,
-            selectForward: true,
-            minDays: 1,
-            maxDays: 15,
-            onSelect: function(start, end){
-            var str = '';
-            str += start ? start.format('Do MMMM YYYY') + ' to ' : '';
-            str += end ? end.format('Do MMMM YYYY') : '...';
-            document.getElementById('daysTravel').innerHTML = str;
-
-            var daysOrig = 1;
-            var now = moment(start); //
-            var end = moment(end); // 
-            var duration = moment.duration(end.diff(now));
-            var daysNum = duration.asDays() + daysOrig;
-            document.getElementById('daysTravelling').innerHTML = daysNum;
+        $('#firstname').keyup(function() {
+            if ($(this).val().length < 2) {
+                $('.b1').addClass('nextButtonHidden');
+                $('.b1').removeClass('buttonShow');
+            } else {
+                $('.b1').removeClass('nextButtonHidden');
+                $('.b1').addClass('buttonShow');
             }
-        });
-        
+        }).keyup();
 
-        $('.formPeeps').click(function() {
-            var sDays = document.getElementById("daysTravelling").innerHTML;
-            
-           
-           
-            
-            if ($(".formPeeps").val()<2 && $(sDays).val()<6 ){
+
+
+        $('#numPeople,#numDays').click(function() {
+
+            if($("#numPeople").val()<2 && $("#numDays").val()<6 ){
                 $('#motorbike').addClass('buttonShow');
                 $('#motorbike').removeClass('buttonHidden');
             }
@@ -191,7 +154,7 @@ $(function(){
                 $('#motorbike').removeClass('buttonShow');
                 $('#motorbike').addClass('buttonHidden');
             }
-            if ($(".formPeeps").val()<3 && $(sDays).val()<11 ){
+            if($("#numPeople").val()<3 && $("#numDays").val()<11 ){
                 $('#smallCar').addClass('buttonShow');
                 $('#smallCar').removeClass('buttonHidden');
             }
@@ -199,7 +162,7 @@ $(function(){
                 $('#smallCar').removeClass('buttonShow');
                 $('#smallCar').addClass('buttonHidden');
             }
-            if ($(".formPeeps").val()<6 && $(sDays).val()<11 && $(daysNum).val()>2 ){
+            if($("#numPeople").val()<6 && $("#numDays").val()<11 && $("#numDays").val()>2 ){
                 $('#largeCar').addClass('buttonShow');
                 $('#largeCar').removeClass('buttonHidden');
             }
@@ -207,7 +170,7 @@ $(function(){
                 $('#largeCar').removeClass('buttonShow');
                 $('#largeCar').addClass('buttonHidden');
             }
-            if ($(".formPeeps").val()>1 && $(sDays).val()>1){
+            if($("#numPeople").val()>1 && $("#numDays").val()>1){
                 $('#motorHome').addClass('buttonShow');
                 $('#motorHome').removeClass('buttonHidden');
             }

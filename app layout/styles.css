@@ -417,6 +417,354 @@
   pointer-events: none;
 }
 
+.lightpick {
+  position: absolute;
+  z-index: 99999;
+  padding: 0;
+  border-radius: 4px;
+  background-color: #2e2e2e;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  color: gainsboro;
+  font-family: system-ui, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.125em;
+  width: 100%;
+  left: 2.5em;
+  padding-right: 4em;
+}
+
+.lightpick--inlined {
+  position: relative;
+  display: inline-block;
+}
+
+.lightpick,
+.lightpick *,
+.lightpick::after,
+.lightpick::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.lightpick.is-hidden {
+  display: none;
+}
+
+.lightpick__months {
+  display: -ms-grid;
+  display: grid;
+  background-color: #2e2e2e;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  grid-gap: 1px;
+}
+
+.lightpick--2-columns .lightpick__months {
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+}
+
+.lightpick--3-columns .lightpick__months {
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+}
+
+.lightpick--4-columns .lightpick__months {
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
+}
+
+.lightpick--5-columns .lightpick__months {
+  -ms-grid-columns: auto auto auto auto auto;
+      grid-template-columns: auto auto auto auto auto;
+}
+
+.lightpick__month {
+  padding: 4px;
+  width: auto;
+  background-color: #0c0c0c;
+}
+
+.lightpick__month-title-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 4px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lightpick__month-title {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 24px;
+  cursor: default;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+.lightpick__month-title > .lightpick__select {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.lightpick__month-title > .lightpick__select:disabled {
+  color: #333;
+}
+
+.lightpick__month-title > .lightpick__select-months {
+  font-weight: bold;
+  font-size: 1em;
+  margin-right: .5em;
+}
+
+.lightpick__toolbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: right;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.lightpick__previous-action,
+.lightpick__next-action,
+.lightpick__close-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 6px;
+  width: 32px;
+  height: 32px;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  background-color: #9f3515;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lightpick__previous-action,
+.lightpick__next-action {
+  font-size: 12px;
+}
+
+.lightpick__close-action {
+  font-size: 18px;
+}
+
+.lightpick__previous-action:active,
+.lightpick__next-action:active,
+.lightpick__close-action:active {
+  color: inherit;
+}
+
+.lightpick__days-of-the-week {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+}
+
+.lightpick__day-of-the-week {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 11px;
+  font-weight: bold;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lightpick__days {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+}
+
+.lightpick__day {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 13px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: default;
+}
+
+.lightpick__day.is-today {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle fill='rgba(220, 50, 47, .5)' cx='16' cy='16' r='16'/%3E%3C/svg%3E");
+  background-size: 18.8% auto;
+  background-position: center bottom;
+  color: #9f3515;
+}
+
+.lightpick__day:not(.is-disabled):hover {
+  background-size: contain;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle fill='%23E0E0E0' cx='16' cy='16' r='16'/%3E%3C/svg%3E");
+}
+
+.lightpick__day.is-disabled {
+  opacity: 0.38;
+  pointer-events: none;
+}
+
+.lightpick__day.disabled-tooltip {
+  pointer-events: auto;
+}
+
+.lightpick__day.is-disabled.is-forward-selected {
+  opacity: 1;
+}
+
+.lightpick__day.is-disabled.is-forward-selected:not(.is-start-date) {
+  background-color: #0c0c0c;
+  background-image: none;
+}
+
+.lightpick__day.is-previous-month,
+.lightpick__day.is-next-month {
+  opacity: 0.38;
+}
+
+.lightpick__day.lightpick__day.is-in-range:not(.is-disabled) {
+  opacity: 1;
+}
+
+.lightpick__day.is-in-range {
+  border-radius: 0;
+  background-color: #9f3515;
+  background-image: none;
+}
+
+.lightpick__day.is-in-range:hover {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle fill='rgba(38, 139, 210, 0.5)' cx='16' cy='16' r='16'/%3E%3C/svg%3E");
+}
+
+.lightpick__day.is-start-date.is-in-range,
+.lightpick__day.is-end-date.is-in-range.is-flipped {
+  border-top-left-radius: 50%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0%;
+  background-color: #9f3515;
+  background-image: none;
+}
+
+.lightpick__day.is-end-date.is-in-range,
+.lightpick__day.is-start-date.is-in-range.is-flipped {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 0;
+  background-color: #9f3515;
+  background-image: none;
+}
+
+.lightpick__day.is-start-date.is-end-date {
+  background-color: #9f3515;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle fill='%23268BD2' cx='16' cy='16' r='16'/%3E%3C/svg%3E");
+}
+
+.lightpick__day.is-start-date,
+.lightpick__day.is-end-date,
+.lightpick__day.is-start-date:hover,
+.lightpick__day.is-end-date:hover {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle fill='rgb(159, 53, 21' cx='16' cy='16' r='16'/%3E%3C/svg%3E");
+  background-size: auto;
+  background-position: center;
+  color: #0c0c0c;
+  font-weight: bold;
+}
+
+.lightpick__tooltip {
+  position: absolute;
+  margin-top: -4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #9f3515;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  font-size: 11px;
+  pointer-events: none;
+}
+
+.lightpick__tooltip::before {
+  position: absolute;
+  bottom: -5px;
+  left: calc(50% - 5px);
+  border-top: 5px solid rgba(0, 0, 0, 0.12);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: "";
+}
+
+.lightpick__tooltip::after {
+  position: absolute;
+  bottom: -4px;
+  left: calc(50% - 4px);
+  border-top: 4px solid #FFF;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  content: "";
+}
+
+.lightpick__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.lightpick__reset-action,
+.lightpick__apply-action {
+  border-radius: 5px;
+  font-size: 12px;
+  border: none;
+}
+
+.lightpick__reset-action {
+  color: #9f3515;
+  background-color: #aeacad;
+}
+
+.lightpick__apply-action {
+  color: #fff;
+  background-color: #9f3515;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -570,7 +918,7 @@ h1, h2, h3, h4, h5 {
   font-weight: 300;
   line-height: 1.2;
   font-size: 6vw;
-  padding: 1em;
+  padding: 0em .5em;
 }
 
 .trip4 .wanakaMap {
@@ -961,9 +1309,9 @@ h1, h2, h3, h4, h5 {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 70%;
           flex: 1 0 70%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .formGrp .formOption {
@@ -974,38 +1322,42 @@ h1, h2, h3, h4, h5 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: .5em 2em;
+}
+
+.formGrp .formOption p {
+  color: gainsboro;
+  text-align: center;
 }
 
 .formGrp .formOption label {
   font-weight: 300;
   text-align: center;
-  font-size: 1.3em;
+  font-size: 1.4em;
   color: #2e2e2e;
 }
 
 .formGrp .formOption input {
-  height: 2em;
-  border-radius: .4em;
+  height: 3em;
   border: 0;
-  background-color: #0c0c0c;
+  background-color: #242424;
+  border-bottom: #9f3515 0.2em solid;
   font-weight: 300;
   text-align: center;
-  font-size: 1.3em;
+  font-size: 1.4em;
   color: gainsboro;
+  margin-bottom: .5em;
 }
 
 .formGrp .formOption input:placeholder {
-  font-weight: 500;
+  font-weight: 400;
   color: gainsboro;
-  font-size: 1.3em;
+  font-size: 1.4em;
 }
 
 .formGrp .formOption select {
   height: 2em;
-  border-radius: .4em;
   border: 0;
-  background-color: #0c0c0c;
+  background-color: #242424;
   font-weight: 300;
   text-align-last: right;
   direction: rtl;
@@ -1014,5 +1366,12 @@ h1, h2, h3, h4, h5 {
   font-size: 1.5em;
   text-transform: capitalize;
   color: gainsboro;
+  border-bottom: 0.2em solid #2e2e2e;
+}
+
+.fo3 .option-group {
+  height: 7em;
+  font-size: .5em;
+  margin-top: 0.2em;
 }
 /*# sourceMappingURL=styles.css.map */

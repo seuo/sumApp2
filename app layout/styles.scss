@@ -1,14 +1,19 @@
+// import
+
+
+
 // colorSwatches
 $color-1: rgb(226, 67, 1);
 $color-2: rgb(220, 220, 220);
 $color-3: rgb(189, 189, 189);
 $color-4: rgb(46, 46, 46);
 $color-5: rgba(12,12,12, 1);
-$color-6: rgb(159, 53, 21);
-$color-7: rgb(74, 116, 118);
-$color-8: rgb(66, 100, 102);
+$color-6: rgb(36, 36, 36);
+$color-7: rgb(159, 53, 21);
 
 @import "_input.scss";
+@import "_lightpick.scss";
+
 
 // resetModule
 * {
@@ -110,7 +115,7 @@ h1,h2,h3,h4,h5 {
         font-weight: 300;
         line-height: 1.2;
         font-size: 6vw;
-        padding:1em;
+        padding: 0em .5em;
     }
    
 }
@@ -164,7 +169,7 @@ h1,h2,h3,h4,h5 {
     }
 
     .activeBar {
-        background-color: $color-6;
+        background-color: $color-7;
         // height: 3.5em;
         color:$color-2;
         font-size:11px;
@@ -304,7 +309,7 @@ h1,h2,h3,h4,h5 {
 
 .color-scheme {
     >:nth-child(4n+1){
-        background-color:$color-6;
+        background-color:$color-7;
     }
     >:nth-child(4n+2){
         background-color:$color-2;
@@ -430,38 +435,43 @@ h1,h2,h3,h4,h5 {
     display: flex;
     flex-direction: column;
     flex: 1 0 70%;
-    justify-content: center;
+    justify-content: flex-start;
     .formOption {
         display:flex;
         flex-direction:column;
-        padding: .5em 2em;
+
+        p {
+            color:$color-2;
+            text-align: center;
+        }
+
         label {
             font-weight: 300;
             text-align: center;
-            font-size: 1.3em;
+            font-size: 1.4em;
             color:$color-4;
+            
         }
         input {
-            height: 2em;
-            border-radius: .4em;
+            height: 3em;
             border: 0;
-            background-color: $color-5;
+            background-color: $color-6;
+            border-bottom: $color-7 .2em solid;
             font-weight: 300;
             text-align: center;
-            font-size: 1.3em;
+            font-size: 1.4em;
             color:$color-2;
-           
+            margin-bottom:.5em;
         }
         input:placeholder {
-            font-weight: 500;
+            font-weight: 400;
             color:$color-2;
-            font-size: 1.3em;
+            font-size: 1.4em;
         }
         select {
             height: 2em;
-            border-radius: .4em;
             border: 0;
-            background-color: $color-5;
+            background-color: $color-6;
             font-weight: 300;
             text-align-last: right;
             direction: rtl;
@@ -470,6 +480,7 @@ h1,h2,h3,h4,h5 {
             font-size: 1.5em;
             text-transform: capitalize;
             color:$color-2;
+            border-bottom: .2em solid $color-4;
         }
     }
 }
@@ -477,5 +488,11 @@ h1,h2,h3,h4,h5 {
 
 // miscModule
 
-
+.fo3 {
+    .option-group {
+        height: 7em;
+        font-size: .5em;
+        margin-top: 0.2em;
+    }
+}
 
