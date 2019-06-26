@@ -11,8 +11,9 @@ $color-5: rgba(12,12,12, 1);
 $color-6: rgb(36, 36, 36);
 $color-7: rgb(143, 48, 19);
 
-@import "_input.scss";
 @import "_lightpick.scss";
+@import "_input.scss";
+@import "_card.scss";
 
 
 // resetModule
@@ -33,7 +34,21 @@ h1,h2,h3,h4,h5 {
     font-family: 'Heebo', sans-serif;
 }
 
+
+
 // layoutModule
+
+//  stage size
+.transportForm {
+    position:absolute;
+    height:600vh;
+    display:flex;
+    flex:1 0 90%;
+    flex-direction:column;
+    transition:all ease 1s;
+    background-color:$color-4;
+}
+
 .app {
     min-height:100vh;
     position: relative;
@@ -89,7 +104,7 @@ h1,h2,h3,h4,h5 {
     flex-direction: column;
     justify-content: flex-end;
     height: 100vh;
-    padding: .5em;
+    // padding: .5em;
     .steps {
         display: flex;
         align-self: flex-end;
@@ -167,16 +182,6 @@ h1,h2,h3,h4,h5 {
 
 // animationModule
 
-.transportForm {
-    position:absolute;
-    height:500vh;
-    display:flex;
-    flex:1 0 90%;
-    flex-direction:column;
-    transition:all ease 1s;
-    background-color:$color-4;
-}
-
 .layer {
     transition:all ease 1s;
 }
@@ -213,36 +218,36 @@ h1,h2,h3,h4,h5 {
 .tripStage1 {
     transform:translate(0,-100vh);
     transition:1s ease all;
-    background-color:#313131;
+    background-color:$color-5;
     
 }
 
 .tripStage2 {
     transform:translate(0,-200vh);
     transition:1s ease all;
-    background-color:#424242;
+    background-color:$color-4;
 }
 
 .tripStage3 {
     transform:translate(0,-300vh);
     transition:1s ease all;
-    background-color:#5a5a5a;
+    background-color:$color-5;
 }
 
 .tripStage4 {
     transform:translate(0,-400vh);
     transition:1s ease all;
-    background-color:#777777;
+    background-color:$color-4;
 }
 
 .tripStage5 {
     transform:translate(0,-500vh);
     transition:1s ease all;
-    background-color:#858585;
+    background-color:$color-5;
 }
 
 .moveTo5 {
-    transform: translate(0, 200vh);
+    transform: translate(0, 190vh);
 }
 
 .moveTo5 .option-input ~ .option {
@@ -307,6 +312,8 @@ h1,h2,h3,h4,h5 {
         }
 }
 
+
+
 //colorModule
 
 .color-scheme {
@@ -327,6 +334,7 @@ h1,h2,h3,h4,h5 {
 .layerMain {
     background-color:$color-5;
 }
+
 
 
 
@@ -479,13 +487,44 @@ h1,h2,h3,h4,h5 {
     }
 }
 
+// paymentModule
+
+.BookingInfo {
+    text-shadow:0.5em 0.5em 0.5em #0000005c;
+    font-weight: 500;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 10%;
+    justify-content: flex-end;
+    color:$color-2;
+}
+.sumStyle {
+    padding: 0em 1em;
+    background-color: $color-6;
+    border-bottom: $color-7 .1em solid;
+}
+.totalStyle {
+    font-size: 2em;
+    background-color: $color-6;
+    border-bottom: $color-7 .2em solid;
+    padding: 0em .5em;
+}
+
+#totalPayment {
+    pointer-events: none;
+    visibility: hidden;
+    opacity:0;
+    height:0;
+}
+
 
 
 // miscModule
 
-.trip1 {
 
-}
 
 .trip4 {
     .wanakaMap {
@@ -503,6 +542,7 @@ h1,h2,h3,h4,h5 {
     justify-content: flex-end;
 }
 
+
 .form2 {
     .option-group {
         height: 7em;
@@ -519,4 +559,6 @@ h1,h2,h3,h4,h5 {
         height: 35vh;
     }
 }
+
+
 

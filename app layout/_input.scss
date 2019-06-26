@@ -61,7 +61,7 @@
     align-items: flex-start;
     flex-direction: column;
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.7;
     transition-duration: 0.8s, 0.6s;
     transition-property: transform, opacity;
     transition-timing-function: cubic-bezier(.98,0,.22,.98), linear;
@@ -230,10 +230,19 @@
         cursor: pointer;
         font-size:1em;
     }
-
-
 }
-
+.formSubmit {
+  flex:0 0 10%;
+  .pure-button-primary {
+    background-color:$color-7;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+    justify-content: center;
+    text-align: center;
+  }
+}
   // layout Hide & Remove
 
 .formPeeps {
@@ -314,6 +323,8 @@
       position: absolute;
   }
 }
+
+
 
 .buttonHidden {
     opacity:.3;

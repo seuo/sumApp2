@@ -52,12 +52,17 @@ $(function(){
             $(sForm).addClass('tripStage4');
         });
 
+        $('[data-targetstage5]').on('click',function(){
+            var sForm = $(this).data('targetstage5');
+            $(sForm).addClass('tripStage5');
+        });
+
 
     // display button logic     
 
         $('[data-targetVehicle1]').on('click',function(){
             $('.b2').removeClass('nextButtonHidden2');
-            if($('#Input-motorbike').val()=='motorbike') {
+            if($('#Input-motorbike').val()=='109') {
                 $(".motorbikeClassGrp").addClass('radioButtonShow'); 
                 $(".economyClassGrp").removeClass('radioButtonShow');
                 $(".mediumClassGrp").removeClass('radioButtonShow'); 
@@ -67,7 +72,7 @@ $(function(){
         });
         $('[data-targetVehicle2]').on('click',function(){
             $('.b2').removeClass('nextButtonHidden2');
-            if($('#Input-smallCar').val()=='smallCar') {
+            if($('#Input-smallCar').val()=='129') {
                 $(".economyClassGrp").addClass('radioButtonShow'); 
                 $(".motorbikeClassGrp").removeClass('radioButtonShow');
                 $(".mediumClassGrp").removeClass('radioButtonShow'); 
@@ -77,7 +82,7 @@ $(function(){
         });
         $('[data-targetVehicle3]').on('click',function(){
             $('.b2').removeClass('nextButtonHidden2');
-            if($('#Input-largeCar').val()=='largeCar') {
+            if($('#Input-largeCar').val()=='144') {
                 $(".mediumClassGrp").addClass('radioButtonShow'); 
                 $(".economyClassGrp").removeClass('radioButtonShow');
                 $(".motorbikeClassGrp").removeClass('radioButtonShow'); 
@@ -87,7 +92,7 @@ $(function(){
         });
         $('[data-targetVehicle4]').on('click',function(){
             $('.b2').removeClass('nextButtonHidden2');
-            if($('#Input-motorHome').val()=='motorHome') {
+            if($('#Input-motorHome').val()=='200') {
                 $(".motorHomeGrp").addClass('radioButtonShow'); 
                 $(".economyClassGrp").removeClass('radioButtonShow');
                 $(".mediumClassGrp").removeClass('radioButtonShow'); 
@@ -96,11 +101,19 @@ $(function(){
             }
         });
 
+   
+
+
+
 
 
         // step navigation cleanup
 
         $('[data-clearstage1]').on('click',function(){
+            $('.numberPeople').prop('checked', false);
+            $('.vehicle').prop('checked', false);
+            $('.b1').addClass('nextButtonHidden');
+
             if ($(".transportForm").hasClass('tripStage1')) {
                 $(".transportForm").removeClass('tripStage1');
             }
@@ -110,6 +123,7 @@ $(function(){
             if ($(".transportForm").hasClass('tripStage3')) {
                 $(".transportForm").removeClass('tripStage3');
             }
+
 
         });
         $('[data-clearstage2]').on('click',function(){
@@ -154,7 +168,8 @@ $(function(){
             }
 
         });
-
+     
+        // Conditional logic
 
             $('.form1').click(function() {
                 var sPeeps = $('input[name=numberPeople]:checked').val(); 
@@ -162,6 +177,7 @@ $(function(){
             
             console.log(sPeeps);
             console.log(sDays);
+
 
             if (sPeeps<2 && sDays<6 ){
                 $('#motorbike').addClass('buttonShow');
@@ -201,9 +217,42 @@ $(function(){
             if (sPeeps>0 && sDays>0 ){
                 $('.b1').removeClass('nextButtonHidden');
             }
+            // if (sPeeps<2 && sDays>10 ){
+            //     $('.b1').addClass('nextButtonHidden');
+            //     $('#numPeople1').addClass('buttonHidden');
+            // }
+            // if (sDays>10 ){
+            //     $('#numPeople1').addClass('buttonHidden');
+            // }
+            
+
+     
 
         }).click();
     });
+
+    // Costs of travel & Payment Total
+
+
+    $('.form3').click(function() {
+               var sDaysTravel = document.getElementById("daysTravelling").innerHTML;
+               var sDayCost = $('input[name=vehicle]:checked').val(); 
+               
+               var sTravelCost = (sDaysTravel * sDayCost);
+               document.getElementById('totalCost').innerHTML = sTravelCost;
+               document.getElementById('dayCost').innerHTML = sDayCost;
+
+                var totalPayment = (sTravelCost);
+                $('#totalPayment').val(totalPayment);
+
+               
+               console.log('Day Cost',sDayCost);
+               console.log('Days Travel',sDaysTravel);
+               console.log('TotalCost',sTravelCost);
+               console.log('PaymentCost',totalPayment);
+
+               
+            }).click();
 
     $('.form4').click(function() {
         var sVclass = $('input[name=vehicleClass]:checked').val(); 
@@ -216,5 +265,32 @@ $(function(){
         var sForm4 = $(this).data('bookingvehicle');
         $(sForm4).addClass('moveTo5');
     });
+
+    $(function() {
+
+        // Only for example - catch form data when the form is submitted
+        $("#example-form").submit(function(e) {
+    
+          // Stop form submission
+          e.preventDefault();
+    
+          // Read form data
+          var data = $("#example-form :input").serializeArray();
+    
+          var displayText = "";
+    
+          // For each input field...
+          for (var i = 0; i < data.length; i++) {
+            var fieldData = data[i];
+            var name = fieldData["name"];
+            var value = fieldData["value"];
+    
+            displayText += name + " : " + value + "\n";
+          }
+    
+          alert(displayText);
+        });
+    
+      });
 
 });

@@ -62,24 +62,8 @@
                             </div>
                             <div class="formGrp form1">
                                 <h1>Please fill in the form below & we will work out your best mode of transport.</h1>
-
-                                <!-- <div class="formOption fo1">		
-								<label></label>
-								<input type="text" name="firstName" id="firstname" placeholder="Full Name"/>
-								<span id="firstNameMessage"></span>
-							</div> -->
                                 <div class="formOption fo2">
-
                                     <input type="text" class="form-control form-control-sm" id="datepicker" placeholder="Select your travel days" />
-
-                                    <!-- <select name="numberPeople" id="numPeople">
-									<option value="1">One person</option>
-									<option value="2">Two people</option>
-									<option value="3">Three people</option>
-									<option value="4">Four people</option>
-									<option value="5">Five people</option>
-									<option value="6">Six people</option>
-								</select> -->
                                 </div>
                                 <div class="formOption form2 formPeeps formboxHidden">
                                     <p>How many people are going?</p>
@@ -87,17 +71,17 @@
 
                                     <div class="option-group">
                                         <div class="option-container">
-                                            <input class="option-input" type="radio" id="numPeople1" name="numberPeople" value="1">
-                                            <input class="option-input" type="radio" id="numPeople2" name="numberPeople" value="2">
+                                            <input class="option-input numberPeople" type="radio" id="numPeople1" name="numberPeople" value="1">
+                                            <input class="option-input numberPeople" type="radio" id="numPeople2" name="numberPeople" value="2">
 
-                                            <label class="option" for="numPeople1" id="numPeople">
+                                            <label class="option numberPeople" for="numPeople1" id="numPeople1">
 									<span class="option__indicator"><img src="" alt=""></span>
 									<span class="option__label">
 											1 Person<sub></sub>
 									</span>
 								  </label>
 
-                                            <label class="option" for="numPeople2" id="numPeople">
+                                            <label class="option numberPeople" for="numPeople2" id="numPeople2">
 									<span class="option__indicator"><img src="" alt=""></span>
 									<span class="option__label">
 											2 People<sub></sub>
@@ -107,17 +91,17 @@
                                     </div>
                                     <div class="option-group">
                                         <div class="option-container">
-                                            <input class="option-input" type="radio" id="numPeople3" name="numberPeople" value="3">
-                                            <input class="option-input" type="radio" id="numPeople4" name="numberPeople" value="4">
+                                            <input class="option-input numberPeople" type="radio" id="numPeople3" name="numberPeople" value="3">
+                                            <input class="option-input numberPeople" type="radio" id="numPeople4" name="numberPeople" value="4">
 
-                                            <label class="option" for="numPeople3" id="numPeople">
+                                            <label class="option numberPeople" for="numPeople3" id="numPeople3">
 										<span class="option__indicator"><img src="" alt=""></span>
 										<span class="option__label">
 												3 People<sub></sub>
 										</span>
 									  </label>
 
-                                            <label class="option" for="numPeople4" id="numPeople">
+                                            <label class="option numberPeople" for="numPeople4" id="numPeople4">
 										<span class="option__indicator"><img src="" alt=""></span>
 										<span class="option__label">
 												4 People<sub></sub>
@@ -127,17 +111,17 @@
                                     </div>
                                     <div class="option-group">
                                         <div class="option-container">
-                                            <input class="option-input" type="radio" id="numPeople5" name="numberPeople" value="5">
-                                            <input class="option-input" type="radio" id="numPeople6" name="numberPeople" value="6">
+                                            <input class="option-input numberPeople" type="radio" id="numPeople5" name="numberPeople" value="5">
+                                            <input class="option-input numberPeople" type="radio" id="numPeople6" name="numberPeople" value="6">
 
-                                            <label class="option" for="numPeople5" id="numPeople">
+                                            <label class="option numberPeople" for="numPeople5" id="numPeople5">
 									<span class="option__indicator"><img src="" alt=""></span>
 									<span class="option__label">
 											5 People<sub></sub>
 									</span>
 								</label>
 
-                                            <label class="option" for="numPeople6" id="numPeople">
+                                            <label class="option numberPeople" for="numPeople6" id="numPeople6">
 									<span class="option__indicator"><img src="" alt=""></span>
 									<span class="option__label">
 											6 People<sub></sub>
@@ -163,15 +147,15 @@
                             <div class="formOption form3">
                                 <div class="option-group">
                                     <div class="option-container">
-                                        <input class="option-input" type="radio" id="Input-motorbike" name="vehicle" value="motorbike">
-                                        <input class="option-input" type="radio" id="Input-smallCar" name="vehicle" value="smallCar">
-                                        <label class="option motorbike" for="Input-motorbike" id="motorbike" data-targetVehicle1=".motorbikeClassGrp" data-targetNext=".b2">
+                                        <input class="option-input vehicle" type="radio" id="Input-motorbike" name="vehicle" value="109">
+                                        <input class="option-input vehicle" type="radio" id="Input-smallCar" name="vehicle" value="129">
+                                        <label class="option vehicle motorbike" for="Input-motorbike" id="motorbike" data-targetVehicle1=".motorbikeClassGrp" data-targetNext=".b2">
 												<span class="option__indicator"><img src="assets/scooter.png" alt=""></span>
 												<span class="option__label">
 														Motor Bike<sub>1 person, 1-5 days, 3.7l/100km</sub>
 												</span>
 											  </label>
-                                        <label class="option smallCar" for="Input-smallCar" id="smallCar" data-targetVehicle2=".economyClassGrp" data-targetNext=".b2">
+                                        <label class="option vehicle smallCar" for="Input-smallCar" id="smallCar" data-targetVehicle2=".economyClassGrp" data-targetNext=".b2">
 													<span class="option__indicator"><img src="assets/smallcar.png" alt=""></span>
 													<span class="option__label">
 															Small Car<sub>1-2 people, 1-10 days, 8.5l/100km</sub>
@@ -181,16 +165,16 @@
                                 </div>
                                 <div class="option-group">
                                     <div class="option-container">
-                                        <input class="option-input" type="radio" id="Input-largeCar" name="vehicle" value="largeCar">
-                                        <input class="option-input" type="radio" id="Input-motorHome" name="vehicle" value="motorHome">
-                                        <label class="option" for="Input-largeCar" id="largeCar" data-targetVehicle3=".mediumClassGrp" data-targetNext=".b2">
+                                        <input class="option-input vehicle" type="radio" id="Input-largeCar" name="vehicle" value="144">
+                                        <input class="option-input vehicle" type="radio" id="Input-motorHome" name="vehicle" value="200">
+                                        <label class="option vehicle" for="Input-largeCar" id="largeCar" data-targetVehicle3=".mediumClassGrp" data-targetNext=".b2">
 												<span class="option__indicator"><img src="assets/largecar.png" alt=""></span>
 												<span class="option__label">
 														Large Car<sub>1-5 people, 3-10 days, 9.7l/100km</sub>
 												</span>
 											  </label>
 
-                                        <label class="option" for="Input-motorHome" id="motorHome" data-targetVehicle4=".motorHomeGrp" data-targetNext=".b2">
+                                        <label class="option vehicle" for="Input-motorHome" id="motorHome" data-targetVehicle4=".motorHomeGrp" data-targetNext=".b2">
 												<span class="option__indicator"><img src="assets/motorhome.png" alt=""></span>
 												<span class="option__label">
 												Motor Home<sub>2-6 people, 2-15 days, 17l/100k</sub>
@@ -333,51 +317,86 @@
                             <div class="steps">
                             </div>
                             <div class="BookingInfo">
-                                <p id="daysTravel">&nbsp;</p>
-                                <p id="daysTravelling">0</p>
+                                <p class="sumStyle" id="daysTravel">&nbsp;</p>
+                                <p class="sumStyle"><span id="daysTravelling">0</span> Days at $<span id="dayCost">0</span> per day</p>
+                                <p class="totalStyle">Total $<span id="totalCost">0</span></p>
                             </div>
 
-                            <div class="formSubmit">
-                                <button type="submit" class="pure-button pure-button-primary">PAY NOW</button>
-
-                            </div>
-                            <div class="progress">
-                                <div class="progBar bar1" data-clearstage1=".transportForm">TRIP<br>DETAILS</div>
-                                <div class="progBar bar2" data-clearstage2=".transportForm">TRANSPORT</div>
-                                <div class="progBar bar3" data-clearstage3=".transportForm">RENTALS</div>
-                                <div class="progBar bar4 activeBar" data-clearstage4=".transportForm">ITINERARY</div>
-                            </div>
+                      
                             <div class="nextButton b5"><a href="#" data-targetstage5=".transportForm" data-clearstage=".transportForm">PAYMENT</a></div>
+                        </div>
+                        <div class="tripStages trip6">
+                            <div class="steps">
+                            </div>
+                                <input type="number" id="totalPayment" value="">
+                                <fieldset>
+                                    <legend>Your Card Details</legend>
+                                
+                                    <!--
+                                      -- Card JS Input Group
+                                      -->
+                                    <div class="card-js form-group">
+                                
+                                      <!-- Card number -->
+                                      <input class="card-number form-control"
+                                             name="my-custom-form-field__card-number"
+                                             placeholder="Enter your card number"
+                                             autocomplete="off"
+                                             required>
+                                
+                                      <!-- Name on card -->
+                                      <input class="name form-control"
+                                             id="the-card-name-id"
+                                             name="my-custom-form-field__card-name"
+                                             placeholder="Enter the name on your card"
+                                             autocomplete="off"
+                                             required>
+                                
+                                
+                                      <!-- Card expiry (element that is displayed) -->
+                                      <input class="expiry form-control"
+                                             autocomplete="off"
+                                             required>
+                                
+                                      <!-- Card expiry - Month (hidden) -->
+                                      <input class="expiry-month" name="my-custom-form-field__card-expiry-month">
+                                
+                                      <!-- Card expiry - Year (hidden) -->
+                                      <input class="expiry-year" name="my-custom-form-field__card-expiry-year">
+                                
+                                
+                                      <!-- Card CVC -->
+                                      <input class="cvc form-control"
+                                             name="my-custom-form-field__card-cvc"
+                                             autocomplete="off"
+                                             required>
+                                
+                                    </div><!-- END .card-js wrapper -->
+                                
+                                
+                                    <!--
+                                      -- Submit button
+                                      --
+                                      -- (Must be outside of the div with class 'card-js')
+                                      -->
+                                    
+                                
+                                  </fieldset>
+                              <div class="formSubmit">
+                                <button type="submit" class="pure-button pure-button-primary">PAY NOW</button>
+                                </div>
+                            </div>   
                         </div>
                     </form>
                 </main>
                 <footer></footer>
             </div>
-
-            <div class="layer layer2 move-right">
-                <header class="header">
-                    <i class="fas fa-chevron-left" data-dismiss=".layer2"></i>
-                    <div class="middle">Tourism NZ</div>
-                    <div class="left"> <i class="fas fa-align-right"></i></div>
-                </header>
-                <main>layer3</main>
-                <footer></footer>
-            </div>
-
-            <div class="layer layer3 move-right">
-                <header class="header">
-                    <i class="fas fa-chevron-left" data-dismiss=".layer3"></i>
-                    <div class="middle">Tourism NZ</div>
-                    <div class="left"> <i class="fas fa-align-right"></i></div>
-                </header>
-                <main>layer4</main>
-                <footer></footer>
-            </div>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="dataTargets.js"></script>
-    <script src="animTargets.js"></script>
+    <script src="card-js.min.js"></script>
+    <script src="script.js"></script>
+    <!-- <script src="animTargets.js"></script> -->
     <script src="plugins/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
     <script src="plugins/lightpick.js"></script>
