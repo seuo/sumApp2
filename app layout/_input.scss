@@ -1,12 +1,3 @@
-// .formOption.vfo1 {
-//     display: flex;
-//     flex-direction: row;
-// }
-
-// .formOption.vfo2 {
-//     display: flex;
-//     flex-direction: row;
-// }
 
 .option-group {
     width: 100%;
@@ -239,6 +230,17 @@
 }
 
   // layout Hide & Remove
+
+.formPeeps {
+  height:100%;
+  transition:3s ease all;
+}
+
+.formboxHidden {
+    opacity:0;
+    height:0;
+    transition:1s ease all;
+}
 
 .nextButtonHidden {
     background-color:$color-3;

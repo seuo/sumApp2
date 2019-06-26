@@ -329,6 +329,19 @@
   font-size: 1em;
 }
 
+.formPeeps {
+  height: 100%;
+  -webkit-transition: 3s ease all;
+  transition: 3s ease all;
+}
+
+.formboxHidden {
+  opacity: 0;
+  height: 0;
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+}
+
 .nextButtonHidden {
   background-color: #bdbdbd;
   color: gainsboro;
@@ -921,18 +934,6 @@ h1, h2, h3, h4, h5 {
   padding: 0em .5em;
 }
 
-.trip4 .wanakaMap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  background-image: url("assets/explore-wanaka.jpg");
-  background-size: 150%;
-  background-position: bottom;
-  background-repeat: no-repeat;
-}
-
 .progress {
   width: 100%;
   height: 3em;
@@ -989,7 +990,7 @@ h1, h2, h3, h4, h5 {
 
 .transportForm {
   position: absolute;
-  height: 400vh;
+  height: 500vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1077,6 +1078,14 @@ h1, h2, h3, h4, h5 {
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
   background-color: #777777;
+}
+
+.tripStage5 {
+  -webkit-transform: translate(0, -500vh);
+          transform: translate(0, -500vh);
+  -webkit-transition: 1s ease all;
+  transition: 1s ease all;
+  background-color: #858585;
 }
 
 .currentStage {
@@ -1171,11 +1180,6 @@ h1, h2, h3, h4, h5 {
 
 .layerMain {
   background-color: #0c0c0c;
-}
-
-.features .feature {
-  font-size: 2em;
-  padding: .5em;
 }
 
 .headerNav {
@@ -1309,9 +1313,9 @@ h1, h2, h3, h4, h5 {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 70%;
           flex: 1 0 70%;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .formGrp .formOption {
@@ -1369,7 +1373,19 @@ h1, h2, h3, h4, h5 {
   border-bottom: 0.2em solid #2e2e2e;
 }
 
-.fo3 .option-group {
+.trip4 .wanakaMap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 80%;
+  background-image: url("assets/explore-wanaka.jpg");
+  background-size: 150%;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.form2 .option-group {
   height: 7em;
   font-size: .5em;
   margin-top: 0.2em;

@@ -96,9 +96,6 @@ $(function(){
             }
         });
 
-        $('[data-targetNext]').on('click',function(){
-            $('.b1').removeClass('nextButtonHidden');
-        });
 
 
         // step navigation cleanup
@@ -130,31 +127,9 @@ $(function(){
             }
         });
 
-        // full name input for next
 
-        // $('#firstname').keyup(function() {
-        //     if ($(this).val().length < 2) {
-        //         $('.b1').addClass('nextButtonHidden');
-        //         $('.b1').removeClass('buttonShow');
-        //     } else {
-        //         $('.b1').removeClass('nextButtonHidden');
-        //         $('.b1').addClass('buttonShow');
-        //     }
-        // }).keyup();
-        // var sPeeps = $('input[name=numberPeople]:checked').val();
-        // $('#numPeople').on(function() {
-        //     $(this).prop( "checked", true );
-        //     console.log(sPeeps);
-        // }).click();
+        $(document).ready(function(){
 
-        // $(".formPeeps").click('change', function () {
-        //     var sPeeps = $(this).val();
-        //     alert(s);
-        //     console.log(sPeeps);
-        // });
-
-        // var sPeeps = $("input[name=numberPeople]").val();
-        
             var picker = new Lightpick({ field: document.getElementById('datepicker'),
             singleDate: false,
             repick: true,
@@ -173,17 +148,22 @@ $(function(){
             var duration = moment.duration(end.diff(now));
             var daysNum = duration.asDays() + daysOrig;
             document.getElementById('daysTravelling').innerHTML = daysNum;
+                        if (daysNum>0 ){
+                $('.formPeeps').removeClass('formboxHidden');
             }
-        });
-        
+            }
 
-        $('.formPeeps').click(function() {
-            var sDays = document.getElementById("daysTravelling").innerHTML;
+        });
+
+
+            $('.form1').click(function() {
+                var sPeeps = $('input[name=numberPeople]:checked').val(); 
+                var sDays = document.getElementById("daysTravelling").innerHTML;
             
-           
-           
-            
-            if ($(".formPeeps").val()<2 && $(sDays).val()<6 ){
+            console.log(sPeeps);
+            console.log(sDays);
+
+            if (sPeeps<2 && sDays<6 ){
                 $('#motorbike').addClass('buttonShow');
                 $('#motorbike').removeClass('buttonHidden');
             }
@@ -191,7 +171,7 @@ $(function(){
                 $('#motorbike').removeClass('buttonShow');
                 $('#motorbike').addClass('buttonHidden');
             }
-            if ($(".formPeeps").val()<3 && $(sDays).val()<11 ){
+            if (sPeeps<3 && sDays<11 ){
                 $('#smallCar').addClass('buttonShow');
                 $('#smallCar').removeClass('buttonHidden');
             }
@@ -199,7 +179,7 @@ $(function(){
                 $('#smallCar').removeClass('buttonShow');
                 $('#smallCar').addClass('buttonHidden');
             }
-            if ($(".formPeeps").val()<6 && $(sDays).val()<11 && $(daysNum).val()>2 ){
+            if (sPeeps<6 && sDays<11 && sDays>2 ){
                 $('#largeCar').addClass('buttonShow');
                 $('#largeCar').removeClass('buttonHidden');
             }
@@ -207,7 +187,7 @@ $(function(){
                 $('#largeCar').removeClass('buttonShow');
                 $('#largeCar').addClass('buttonHidden');
             }
-            if ($(".formPeeps").val()>1 && $(sDays).val()>1){
+            if (sPeeps>1 && sDays>1){
                 $('#motorHome').addClass('buttonShow');
                 $('#motorHome').removeClass('buttonHidden');
             }
@@ -215,7 +195,20 @@ $(function(){
                 $('#motorHome').removeClass('buttonShow');
                 $('#motorHome').addClass('buttonHidden');
             }
-            
+            if (sDays>0 ){
+                $('.formPeeps').removeClass('formboxHidden');
+            }
+            if (sPeeps>0 && sDays>0 ){
+                $('.b1').removeClass('nextButtonHidden');
+            }
+
         }).click();
-    
+    });
+
+    $('.form3').click(function() {
+        var sVclass = $('input[name=vehicleClass]:checked').val(); 
+        if (sVclass>0){
+            $('.b3').removeClass('nextButtonHidden');
+        }
+    });
 });
