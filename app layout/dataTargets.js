@@ -205,10 +205,16 @@ $(function(){
         }).click();
     });
 
-    $('.form3').click(function() {
+    $('.form4').click(function() {
         var sVclass = $('input[name=vehicleClass]:checked').val(); 
         if (sVclass>0){
-            $('.b3').removeClass('nextButtonHidden');
+            $('.b3').removeClass('nextButtonHidden3');
         }
     });
+
+    $('[data-bookingvehicle]').on('click',function(){
+        var sForm4 = $(this).data('bookingvehicle');
+        $(sForm4).addClass('moveTo5');
+    });
+
 });

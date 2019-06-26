@@ -9,7 +9,7 @@ $color-3: rgb(189, 189, 189);
 $color-4: rgb(46, 46, 46);
 $color-5: rgba(12,12,12, 1);
 $color-6: rgb(36, 36, 36);
-$color-7: rgb(159, 53, 21);
+$color-7: rgb(143, 48, 19);
 
 @import "_input.scss";
 @import "_lightpick.scss";
@@ -87,7 +87,7 @@ h1,h2,h3,h4,h5 {
 .tripStages {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     height: 100vh;
     padding: .5em;
     .steps {
@@ -96,8 +96,7 @@ h1,h2,h3,h4,h5 {
         align-items: center;
         width: 100%;
         flex-direction: row;
-        justify-content: space-around;
-        flex: 1 0 10%;
+        flex: 0 0 10%;
         font-size: 2.5em;
         div {
             height: 2em;
@@ -135,7 +134,7 @@ h1,h2,h3,h4,h5 {
     display: -ms-flexbox;
     display: flex;
     align-items: flex-end;
-    flex: 1 0 1%;
+    flex: 0 0 8%;
 
     .progBar {
         background-color: $color-5;
@@ -240,6 +239,17 @@ h1,h2,h3,h4,h5 {
     transform:translate(0,-500vh);
     transition:1s ease all;
     background-color:#858585;
+}
+
+.moveTo5 {
+    transform: translate(0, 200vh);
+}
+
+.moveTo5 .option-input ~ .option {
+    display: none;
+}
+.moveTo5 .option-input:checked ~ .option {
+    display: initial;
 }
 
 .currentStage {
@@ -418,7 +428,7 @@ h1,h2,h3,h4,h5 {
 .formGrp {
     display: flex;
     flex-direction: column;
-    flex: 1 0 70%;
+    flex: 1 0 60%;
     justify-content: center;
     .formOption {
         display:flex;
@@ -488,11 +498,24 @@ h1,h2,h3,h4,h5 {
     }
 }
 
+.trip5 {
+    justify-content: flex-end;
+}
+
 .form2 {
     .option-group {
         height: 7em;
         font-size: .5em;
         margin-top: 0.2em;
+    }
+}
+
+.form4 {
+        display: flex;
+        flex: 1 0 40%;
+        flex-direction: column;
+    label {
+        height: 35vh;
     }
 }
 
