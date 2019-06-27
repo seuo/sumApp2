@@ -681,6 +681,37 @@
   font-size: 1em;
 }
 
+.prevButton {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 10%;
+          flex: 0 0 10%;
+  text-align: center;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: .2em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #8f3013;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-weight: 500;
+  -webkit-transition: 1.5s ease all;
+  transition: 1.5s ease all;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: .1em;
+  text-align: center;
+  color: #bdbdbd;
+}
+
 .formSubmit {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 10%;
@@ -1055,8 +1086,8 @@
 legend {
   border: 0;
   padding: 0;
-  color: #8f3013;
-  font-size: 1.6em;
+  color: gainsboro;
+  font-size: 6vw;
   text-align: center;
 }
 
@@ -1084,7 +1115,7 @@ h1, h2, h3, h4, h5 {
 
 .transportForm {
   position: absolute;
-  height: 600vh;
+  height: 700vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1207,8 +1238,8 @@ h1, h2, h3, h4, h5 {
       -ms-flex-direction: row;
           flex-direction: row;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 10%;
-          flex: 0 0 10%;
+      -ms-flex: 0 0 11%;
+          flex: 0 0 11%;
   font-size: 2.5em;
 }
 
@@ -1374,8 +1405,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .moveTo5 {
-  -webkit-transform: translate(0, 190vh);
-          transform: translate(0, 190vh);
+  -webkit-transform: translate(0, 200vh);
+          transform: translate(0, 200vh);
 }
 
 .moveTo5 .option-input ~ .option {
@@ -1691,6 +1722,11 @@ h1, h2, h3, h4, h5 {
   color: gainsboro;
 }
 
+.BookingInfo h1 {
+  text-align: left;
+  padding-left: .7em;
+}
+
 .sumStyle {
   padding: 0em 1em;
   background-color: #242424;
@@ -1750,5 +1786,55 @@ h1, h2, h3, h4, h5 {
 
 .form4 label {
   height: 35vh;
+}
+
+.form5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 10%;
+          flex: 1 0 10%;
+}
+
+.form5 .cols {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.form5 .cols .col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 48%;
+          flex: 0 0 48%;
+}
+
+.form5 .cols .col input {
+  width: 100%;
+  margin-top: .5em;
+  height: 2em;
+  border: 0;
+  background-color: #242424;
+  border-bottom: #8f3013 0.2em solid;
+  font-weight: 300;
+  text-align: left;
+  font-size: 1em;
+  padding-left: 0.5em;
+  color: gainsboro;
 }
 /*# sourceMappingURL=styles.css.map */

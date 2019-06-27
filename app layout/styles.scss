@@ -41,7 +41,7 @@ h1,h2,h3,h4,h5 {
 //  stage size
 .transportForm {
     position:absolute;
-    height:600vh;
+    height:700vh;
     display:flex;
     flex:1 0 90%;
     flex-direction:column;
@@ -111,7 +111,7 @@ h1,h2,h3,h4,h5 {
         align-items: center;
         width: 100%;
         flex-direction: row;
-        flex: 0 0 10%;
+        flex: 0 0 11%;
         font-size: 2.5em;
         div {
             height: 2em;
@@ -247,7 +247,7 @@ h1,h2,h3,h4,h5 {
 }
 
 .moveTo5 {
-    transform: translate(0, 190vh);
+    transform: translate(0, 200vh);
 }
 
 .moveTo5 .option-input ~ .option {
@@ -500,6 +500,10 @@ h1,h2,h3,h4,h5 {
     flex: 1 0 10%;
     justify-content: flex-end;
     color:$color-2;
+    h1 {
+        text-align: left;
+        padding-left:.7em;
+    }
 }
 .sumStyle {
     padding: 0em 1em;
@@ -559,6 +563,36 @@ h1,h2,h3,h4,h5 {
         height: 35vh;
     }
 }
+.form5 {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 10%;
+    .cols {
+        display: flex;
+        justify-content: space-between;
+        width:100%;
+        // box-sizing: border-box;
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 48%;
+            input {
+                width: 100%;
+                margin-top:.5em;
+                height: 2em;
+                border: 0;
+                background-color: $color-6;
+                border-bottom: $color-7 .2em solid;
+                font-weight: 300;
+                text-align: left;
+                font-size: 1em;
+                padding-left: 0.5em;
+                color:$color-2;
+            }
+        }
+    }
 
 
+}
 

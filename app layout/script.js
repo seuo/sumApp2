@@ -1,5 +1,7 @@
 $(function(){
 
+
+
     // open & close menu
         $('[data-target]').on('click',function(){
 
@@ -107,7 +109,7 @@ $(function(){
 
 
 
-        // step navigation cleanup
+        // step progress navigation cleanup
 
         $('[data-clearstage1]').on('click',function(){
             $('.numberPeople').prop('checked', false);
@@ -123,9 +125,12 @@ $(function(){
             if ($(".transportForm").hasClass('tripStage3')) {
                 $(".transportForm").removeClass('tripStage3');
             }
-
+            if ($(".form4").hasClass('moveTo5')) {
+                $(".form4").removeClass('moveTo5');
+            }
 
         });
+
         $('[data-clearstage2]').on('click',function(){
             if ($(".transportForm").hasClass('tripStage2')) {
                 $(".transportForm").removeClass('tripStage2');
@@ -133,126 +138,36 @@ $(function(){
             if ($(".transportForm").hasClass('tripStage3')) {
                 $(".transportForm").removeClass('tripStage3');
             }
+            if ($(".form4").hasClass('moveTo5')) {
+                $(".form4").removeClass('moveTo5');
+            }
         });
 
         $('[data-clearstage3]').on('click',function(){
             if ($(".transportForm").hasClass('tripStage3')) {
                 $(".transportForm").removeClass('tripStage3');
             }
+            if ($(".form4").hasClass('moveTo5')) {
+                $(".form4").removeClass('moveTo5');
+            }
+        });
+
+        $('[data-clearstage4]').on('click',function(){
+            if ($(".transportForm").hasClass('tripStage4')) {
+                $(".transportForm").removeClass('tripStage4');
+            }
+        });
+
+        $('[data-clearstage5]').on('click',function(){
+            if ($(".transportForm").hasClass('tripStage5')) {
+                $(".transportForm").removeClass('tripStage5');
+            }
         });
 
 
-        $(document).ready(function(){
-
-            var picker = new Lightpick({ field: document.getElementById('datepicker'),
-            singleDate: false,
-            repick: true,
-            selectForward: true,
-            minDays: 1,
-            maxDays: 15,
-            onSelect: function(start, end){
-            var str = '';
-            str += start ? start.format('Do MMMM YYYY') + ' to ' : '';
-            str += end ? end.format('Do MMMM YYYY') : '...';
-            document.getElementById('daysTravel').innerHTML = str;
-
-            var daysOrig = 1;
-            var now = moment(start); //
-            var end = moment(end); // 
-            var duration = moment.duration(end.diff(now));
-            var daysNum = duration.asDays() + daysOrig;
-            document.getElementById('daysTravelling').innerHTML = daysNum;
-                        if (daysNum>0 ){
-                $('.formPeeps').removeClass('formboxHidden');
-            }
-            }
-
-        });
-     
-        // Conditional logic
-
-            $('.form1').click(function() {
-                var sPeeps = $('input[name=numberPeople]:checked').val(); 
-                var sDays = document.getElementById("daysTravelling").innerHTML;
-            
-            console.log(sPeeps);
-            console.log(sDays);
-
-
-            if (sPeeps<2 && sDays<6 ){
-                $('#motorbike').addClass('buttonShow');
-                $('#motorbike').removeClass('buttonHidden');
-            }
-             else {
-                $('#motorbike').removeClass('buttonShow');
-                $('#motorbike').addClass('buttonHidden');
-            }
-            if (sPeeps<3 && sDays<11 ){
-                $('#smallCar').addClass('buttonShow');
-                $('#smallCar').removeClass('buttonHidden');
-            }
-            else {
-                $('#smallCar').removeClass('buttonShow');
-                $('#smallCar').addClass('buttonHidden');
-            }
-            if (sPeeps<6 && sDays<11 && sDays>2 ){
-                $('#largeCar').addClass('buttonShow');
-                $('#largeCar').removeClass('buttonHidden');
-            }
-            else {
-                $('#largeCar').removeClass('buttonShow');
-                $('#largeCar').addClass('buttonHidden');
-            }
-            if (sPeeps>1 && sDays>1){
-                $('#motorHome').addClass('buttonShow');
-                $('#motorHome').removeClass('buttonHidden');
-            }
-            else {
-                $('#motorHome').removeClass('buttonShow');
-                $('#motorHome').addClass('buttonHidden');
-            }
-            if (sDays>0 ){
-                $('.formPeeps').removeClass('formboxHidden');
-            }
-            if (sPeeps>0 && sDays>0 ){
-                $('.b1').removeClass('nextButtonHidden');
-            }
-            // if (sPeeps<2 && sDays>10 ){
-            //     $('.b1').addClass('nextButtonHidden');
-            //     $('#numPeople1').addClass('buttonHidden');
-            // }
-            // if (sDays>10 ){
-            //     $('#numPeople1').addClass('buttonHidden');
-            // }
-            
 
      
-
-        }).click();
-    });
-
-    // Costs of travel & Payment Total
-
-
-    $('.form3').click(function() {
-               var sDaysTravel = document.getElementById("daysTravelling").innerHTML;
-               var sDayCost = $('input[name=vehicle]:checked').val(); 
-               
-               var sTravelCost = (sDaysTravel * sDayCost);
-               document.getElementById('totalCost').innerHTML = sTravelCost;
-               document.getElementById('dayCost').innerHTML = sDayCost;
-
-                var totalPayment = (sTravelCost);
-                $('#totalPayment').val(totalPayment);
-
-               
-               console.log('Day Cost',sDayCost);
-               console.log('Days Travel',sDaysTravel);
-               console.log('TotalCost',sTravelCost);
-               console.log('PaymentCost',totalPayment);
-
-               
-            }).click();
+     
 
     $('.form4').click(function() {
         var sVclass = $('input[name=vehicleClass]:checked').val(); 
