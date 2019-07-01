@@ -1,7 +1,5 @@
 $(function(){
 
-
-
     // open & close menu
         $('[data-target]').on('click',function(){
 

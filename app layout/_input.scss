@@ -126,7 +126,7 @@
     &:after {
       content: '';
       display: block;
-      border: solid 2px $color-5;
+      border: solid 2px ;
       width: 100%;
       transform-origin: 0 0;
       transform: scaleX(0.2);
@@ -172,11 +172,11 @@
   
   .option-input:nth-child(1):checked ~ .option:nth-of-type(1) {
     opacity: 1;
-    color:$color-1;
+    color:$color-5;
     box-shadow: 1em 0.4em 1.5em 0em #00000094;
     z-index: 11;
     background: #fff;
-    .option__indicator {color:$color-1; transform: translateX(0); &::after { transform: scale(1); } 
+    .option__indicator {color:$color-5; transform: translateX(0); &::after {color:$color-1; transform: scale(1); } 
     img {
         width: 70%;
         padding-left: 0;
@@ -187,11 +187,11 @@
   }
   .option-input:nth-child(2):checked ~ .option:nth-of-type(2) {
     opacity: 1;
-    color:$color-1;
+    color:$color-5;
     box-shadow: -1em 0.4em 1.5em 0em #00000094;
     z-index: 11;
     background: #fff;
-    .option__indicator {color:$color-1; transform: translateX(0); &::after { transform: scale(1); } 
+    .option__indicator {color:$color-5; transform: translateX(0); &::after {color:$color-1; transform: scale(1); } 
     img {
         width: 70%;
         padding-left: 0;

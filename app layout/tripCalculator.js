@@ -1,14 +1,5 @@
    // Conditional logic
 
-
-            // if (sPeeps<2 && sDays>10 ){
-            //     $('.b1').addClass('nextButtonHidden');
-            //     $('#numPeople1').addClass('buttonHidden');
-            // }
-            // if (sDays>10 ){
-            //     $('#numPeople1').addClass('buttonHidden');
-            // }
-            
             $(function(){
 
                 var picker = new Lightpick({ field: document.getElementById('datepicker'),
@@ -99,20 +90,35 @@
 
     $('.form3').click(function() {
                var iDaysTravel = document.getElementById("daysTravelling").innerHTML;
-               var iDayCost = $('input[name=vehicle]:checked').val(); 
-               
+               var iDayCost = $('input[name=vehicle]:checked').val();  
                var iTravelCost = (iDaysTravel * iDayCost);
+
                document.getElementById('totalCost').innerHTML = iTravelCost;
                document.getElementById('dayCost').innerHTML = iDayCost;
 
                 var iTotalPayment = (iTravelCost);
                 $('#totalPayment').val(iTotalPayment);
 
-               
+                
                console.log('Day Cost',iDayCost);
                console.log('Days Travel',iDaysTravel);
-               console.log('TotalCost',iTravelCost);
-               console.log('PaymentCost',iTotalPayment);
+               console.log('Total Cost',iTravelCost);
+               console.log('Payment Cost',iTotalPayment);
+
+               
+
 
                
             }).click();
+
+            $('.b4').click(function() {
+
+                var iFuelCons = $('input[name=vehicleClass]:checked').val();
+                var iDistTravelled = document.getElementById("distance").innerHTML;
+                var iPerRaw = ((iDistTravelled) * (iFuelCons));
+                var iPerKm = iPerRaw.toFixed(2);
+                document.getElementById('fuelCons').innerHTML = iPerKm;
+                console.log('Distance Travelled',iDistTravelled);
+                console.log('Fuel Economy',iPerKm);
+                
+             }).click();
