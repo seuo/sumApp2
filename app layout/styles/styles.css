@@ -595,24 +595,28 @@ fieldset {
   opacity: 0;
   pointer-events: none;
   height: 0;
+  display: none;
 }
 
 .economyClassGrp {
   opacity: 0;
   pointer-events: none;
   height: 0;
+  display: none;
 }
 
 .mediumClassGrp {
   opacity: 0;
   pointer-events: none;
   height: 0;
+  display: none;
 }
 
 .motorHomeGrp {
   opacity: 0;
   pointer-events: none;
   height: 0;
+  display: none;
 }
 
 .option-container {
@@ -885,6 +889,7 @@ fieldset {
       -ms-flex-direction: row;
           flex-direction: row;
   font-weight: 500;
+  z-index: 99999;
   -webkit-transition: 1.5s ease all;
   transition: 1.5s ease all;
   font-size: 1em;
@@ -1090,8 +1095,8 @@ fieldset {
   opacity: 1;
   -webkit-transition: .5s ease all;
   transition: .5s ease all;
-  height: 10em;
   pointer-events: initial;
+  display: initial;
 }
 
 .buttonGone {
@@ -1149,7 +1154,7 @@ h1, h2, h3, h4, h5 {
 
 .transportForm {
   position: absolute;
-  height: 700vh;
+  height: 600vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1398,7 +1403,7 @@ h1, h2, h3, h4, h5 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  z-index: 9;
+  z-index: 99999;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1909,6 +1914,12 @@ h1, h2, h3, h4, h5 {
           justify-content: flex-end;
 }
 
+.trip3 {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .form2 .option-group {
   height: 7em;
   font-size: .5em;
@@ -1920,8 +1931,8 @@ h1, h2, h3, h4, h5 {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 40%;
-          flex: 1 0 40%;
+      -ms-flex: 1 0 55%;
+          flex: 1 0 55%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;

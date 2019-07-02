@@ -15,24 +15,28 @@
     opacity:0;
     pointer-events: none;
     height:0;
+    display: none;
   }
 
   .economyClassGrp {
     opacity:0;
     pointer-events: none;
     height:0;
+    display: none;
   }
 
   .mediumClassGrp {
     opacity:0;
     pointer-events: none;
     height:0;
+    display: none;
   }
 
   .motorHomeGrp {
     opacity:0;
     pointer-events: none;
     height:0;
+    display: none;
   }
     
   
@@ -213,7 +217,7 @@
     background-color: $color-7;
     flex-direction: row;
     font-weight:500;
-    // clip-path: polygon(100% 0%, 100% 70%, 50% 100%, 0 70%, 0% 0);
+    z-index: 99999;
     transition:1.5s ease all;
     font-size: 1em;
     cursor:pointer;
@@ -367,8 +371,8 @@
 .radioButtonShow {
   opacity:1;
   transition:.5s ease all;
-  height: 10em;
   pointer-events:initial;
+  display:initial;
 }
 
 
