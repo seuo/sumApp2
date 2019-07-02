@@ -11,9 +11,9 @@ $color-5: rgba(12,12,12, 1);
 $color-6: rgb(36, 36, 36);
 $color-7: rgb(143, 48, 19);
 
-@import "_lightpick.scss";
-@import "_card.scss";
-@import "_input.scss";
+@import "_datepick.scss";
+@import "_cardform.scss";
+@import "_buttons.scss";
 
 
 // resetModule
@@ -36,20 +36,18 @@ h1,h2,h3,h4,h5 {
 
 
 
-
-
 // layoutModule
 
-    //  stage size
-.transportForm {
-    position:absolute;
-    height:700vh;
-    display:flex;
-    flex:1 0 90%;
-    flex-direction:column;
-    transition:all ease 1s;
-    background-color:$color-4;
-}
+    //  form stage size
+    .transportForm {
+        position:absolute;
+        height:700vh;
+        display:flex;
+        flex:1 0 90%;
+        flex-direction:column;
+        transition:all ease 1s;
+        background-color:$color-5;
+    }
 
 .app {
     min-height:100vh;
@@ -74,23 +72,38 @@ h1,h2,h3,h4,h5 {
                 flex-direction: column;
                 flex: 1 0 60%;
                 justify-content: space-between;
-                background-image:url("assets/mainBg.jpg");
+                background-image:url("../assets/mainBg.jpg");
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: cover;
-                .feature h2 {
-                    font-size: 7vw;
-                    text-align: center;
-                }
-                    .startTrip {
-                    height: 6em;
-                    background-color: #333;
-                    text-align:center;
+                .mainHeading {
+                    background-color:$color-7;
+                    display: flex;
+                    flex: 0 0 10%;
+                    justify-content: center;
+                    align-items: center;
+                    flex: 0 0 10%;
+                    padding: .7em;
+                    box-shadow: 0em 0em 3em 0em #000000;
+                    h2 {
+                        font-size: 7vw;
+                        text-align: center;
+                        line-height:1.2
+                        }
+                    }
+                .startTrip {
+                background-color: #333;
+                text-align:center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex:0 0 10%;
+                box-shadow: 0em 0em 3em 0em #000000;
                     h1 {
                         font-size: 8vw;
                         color: #dcdcdc;
                     }
-                    }
+                }
             }
         }
         footer{
@@ -101,12 +114,27 @@ h1,h2,h3,h4,h5 {
     }
 }
 
-.tripStages {
+.section {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     height: 100vh;
-    // padding: .5em;
+    .page {
+        flex: 0 0 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        text-align: center;
+        color:$color-2;
+        h2{
+            color:$color-7;
+        }
+        p{
+            font-size:.85em;
+            padding:.3em 1em;
+        
+        }
+    }
     .steps {
         display: flex;
         align-self: flex-end;
@@ -133,7 +161,6 @@ h1,h2,h3,h4,h5 {
         font-size: 6vw;
         padding: 0em .5em;
     }
-   
 }
 
 #map{
@@ -178,24 +205,25 @@ h1,h2,h3,h4,h5 {
         display:flex;
         justify-content: center;
         align-items:center;
-        // position:absolute;
-        // clip-path: polygon(50% 0%, 84% 40%, 84% 100%, 0 100%, 0% 38%);
         text-align:center;
         line-height:1.2;
         color:$color-2;
         font-size:11px;
         transition:1s ease all;
+        border:thin solid $color-6;
     }
 
     .activeBar {
         background-color: $color-7;
-        // height: 3.5em;
         color:$color-2;
         font-size:11px;
-        // clip-path: polygon(50% 0%, 90% 38%, 100% 100%, 3% 100%, 10% 38%);
         box-shadow: inset 0em 0em 3em 0px #0000008c;
-        // transform: scale(1.1)translateX(-10%);
         z-index: 11;
+    }
+
+    .faded {
+        opacity:.5;
+        background-color:$color-4;
     }
 }
 
@@ -204,6 +232,37 @@ h1,h2,h3,h4,h5 {
 .layer {
     transition:all ease 1s;
 }
+
+.layer1 {
+    clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
+    opacity:0;
+    transform-origin: top left;
+    border-radius:0em 0em 100em 0em;
+}
+
+.layer2 {
+    clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
+    opacity:0;
+    transform-origin: top left;
+    border-radius:0em 0em 100em 0em;
+}
+
+
+.layer3 {
+    clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
+    opacity:0;
+    transform-origin: top left;
+    border-radius:0em 0em 100em 0em;
+}
+
+.layer4 {
+    clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
+    opacity:0;
+    transform-origin: top left;
+    border-radius:0em 0em 100em 0em;
+}
+
+
 
 .fold {
     clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
@@ -237,32 +296,26 @@ h1,h2,h3,h4,h5 {
 .tripStage1 {
     transform:translate(0,-100vh);
     transition:1s ease all;
-    background-color:$color-5;
-    
 }
 
 .tripStage2 {
     transform:translate(0,-200vh);
     transition:1s ease all;
-    background-color:$color-4;
 }
 
 .tripStage3 {
     transform:translate(0,-300vh);
     transition:1s ease all;
-    background-color:$color-5;
 }
 
 .tripStage4 {
     transform:translate(0,-400vh);
     transition:1s ease all;
-    background-color:$color-4;
 }
 
 .tripStage5 {
     transform:translate(0,-500vh);
     transition:1s ease all;
-    background-color:$color-5;
 }
 
 .moveTo5 {
@@ -296,6 +349,7 @@ h1,h2,h3,h4,h5 {
     background-color:$color-5;
     flex: 0 0 12%;
     justify-content: flex-end;
+    z-index: 9;
     img {
         width: 70vw;
         padding-right: 10vw;
@@ -313,9 +367,7 @@ h1,h2,h3,h4,h5 {
     }
 }
 
-.layerMain .middle {
-    color:$color-2 ;
-}
+
 
 .layer1 .header {
     justify-content: flex-end;
@@ -337,43 +389,37 @@ h1,h2,h3,h4,h5 {
 
 //colorModule
 
-.color-scheme {
-    >:nth-child(4n+1){
-        background-color:$color-7;
-    }
-    >:nth-child(4n+2){
-        background-color:$color-2;
-    }
-    >:nth-child(4n+3){
-        background-color:$color-3;
-    }
-    >:nth-child(4n+4){
-        background-color:$color-4;
-    }
-}
+
 
 .layerMain {
     background-color:$color-5;
 }
 
+.layer {
+    background-color:$color-5;
+}
 
-
+.layerMain .middle {
+    color:$color-2 ;
+}
 
 // navModule
 
 .headerNav {
     transition:1.7s ease all;
-    height: 10%;
+    height: 12%;
     position: absolute;
     z-index: 11;
-    width: 5em;
+    width: 6em;
     // border-radius: 0 0 100% 0%;
     color:$color-2;
     transition:ease 1s all;
     clip-path: polygon(0 0, 100% 0, 50% 50%, 0% 100%);
     display: flex;
     justify-content: center;
-    padding: .5em;
+    img {
+        padding: .5em;
+    }
     .appNav {
         transition:.5s ease all;
         height:0;
@@ -430,6 +476,10 @@ h1,h2,h3,h4,h5 {
     }
     img {
         opacity:1;
+    }
+    i {
+        color: $color-1;
+        transition: ease all 1.7s;
     }
     .menuButton {
         transform: rotate(0deg);
@@ -549,89 +599,80 @@ h1,h2,h3,h4,h5 {
 
 // miscModule
 
-
-
-.trip4 {
-    .wanakaMap {
-        display: flex;
-        width: 100%;
-        height: 80%;
-        background-image: url("assets/explore-wanaka.jpg");
-        background-size: 150%;
-        background-position: bottom;
-        background-repeat: no-repeat;
+    .trip5 {
+        justify-content: flex-end;
     }
-}
-
-.trip5 {
-    justify-content: flex-end;
-}
 
 
-.form2 {
-    .option-group {
-        height: 7em;
-        font-size: .5em;
-        margin-top: 0.2em;
+    .form2 {
+        .option-group {
+            height: 7em;
+            font-size: .5em;
+            margin-top: 0.2em;
+        }
     }
-}
 
-.form4 {
-        display: flex;
-        flex: 1 0 40%;
-        flex-direction: column;
-    label {
-        height: 35vh;
-    }
-}
-
-.form5 {
-    display: flex;
-    flex-direction: column;
-    flex: 1 0 10%;
-    .cols {
-        display: flex;
-        justify-content: space-between;
-        width:100%;
-        // box-sizing: border-box;
-
-        .col {
+    .form4 {
             display: flex;
+            flex: 1 0 40%;
             flex-direction: column;
-            flex: 0 0 48%;
-            input {
-                width: 100%;
-                margin-top:.5em;
-                height: 2em;
-                border: 0;
-                background-color: $color-6;
-                border-bottom: $color-7 .2em solid;
-                font-weight: 300;
-                text-align: left;
-                font-size: 1em;
-                padding-left: 0.5em;
-                color:$color-2;
+        label {
+            height: 35vh;
+        }
+    }
+
+    .form5 {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 10%;
+        .cols {
+            display: flex;
+            justify-content: space-between;
+            width:100%;
+            // box-sizing: border-box;
+
+            .col {
+                display: flex;
+                flex-direction: column;
+                flex: 0 0 48%;
+                input {
+                    width: 100%;
+                    margin-top:.5em;
+                    height: 2em;
+                    border: 0;
+                    background-color: $color-6;
+                    border-bottom: $color-7 .2em solid;
+                    font-weight: 300;
+                    text-align: left;
+                    font-size: 1em;
+                    padding-left: 0.5em;
+                    color:$color-2;
+                }
             }
         }
     }
-}
 
-.travelInfo {
-    position: absolute;
-    z-index: 999;
-    font-size: 1.2em;
-    bottom: 0;
-    padding: 1em;
-    color: $color-7;
-    font-weight: 500;
-}
+    .travelInfo {
+        position: absolute;
+        z-index: 999;
+        font-size: 1.2em;
+        bottom: 0;
+        padding: 1em;
+        color: $color-7;
+        font-weight: 500;
+    }
 
-div#fuelEconomy {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    div {
+    div#fuelEconomy {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        div {
+            display: flex;
+            flex-direction: row;
+        }
     }
-}
+
+    .SegmentLength {
+        display:none;
+    }
+

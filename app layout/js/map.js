@@ -4,6 +4,26 @@ var directionsLayerGroup = L.layerGroup().addTo(map);
 var directionsService;
 var services = [
 	{
+		latlng:{lat:-44.6537162,lng:168.8022141},
+		description:'Mt Aspiring',
+		icon:'assets/mountain-summit.svg'
+	},
+	{
+		latlng:{lat:-45.1196851,lng:169.0258232},
+		description:'Cromwell',
+		icon:'assets/cromwell.svg'
+	},
+	{
+		latlng:{lat:-44.5862601,lng:167.6231734},
+		description:'Milford Sounds',
+		icon:'assets/mountain-summit.svg'
+	},
+	{
+		latlng:{lat:-45.0244532,lng:168.6743453},
+		description:'Queenstown',
+		icon:'assets/queenstown.png'
+	},
+	{
 		latlng:{lat:-44.8715702,lng:168.947457},
 		description:'Cardrona Alpine Resort',
 		icon:'assets/alpine.svg'

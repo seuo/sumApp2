@@ -202,9 +202,9 @@
                 showDistances: true,
                 showArea: false,
                 lang: {
-                    totalLength: 'Total length',
-                    totalArea: 'Total area',
-                    segmentLength: 'Segment length'
+                    totalLength: 'TotalLength',
+                    totalArea: 'TotalArea',
+                    segmentLength: 'SegmentLength'
                 }
             }, options || {});
 

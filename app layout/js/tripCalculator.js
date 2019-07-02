@@ -121,4 +121,5 @@
                 console.log('Distance Travelled',iDistTravelled);
                 console.log('Fuel Economy',iPerKm);
                 
+                
              }).click();

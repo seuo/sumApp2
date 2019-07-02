@@ -17,19 +17,66 @@ $(function(){
   // Home & close menu
         $('.menuButton').click( function() {
             $(".headerNav").toggleClass("navOpen");
+            
         });
 
-        $('.link1').click( function() {
-            if($(".layer1").hasClass("unfold")){
-                $(".layer1").removeClass('unfold');
-                $(".headerNav").toggleClass("navOpen");
+        $('[data-navHome]').click( function() {
+            var sNav = $(this).data('navHome');
+            $(".headerNav").toggleClass("navOpen");
+            
+            if($(".layerMain").siblings().hasClass("unfold")){
+                $(".layerMain").siblings().removeClass("unfold");
             }
-            else {
-                $(".headerNav").toggleClass("navOpen");
+        });
+
+        
+        // nav1 & close menu
+        $('[data-nav1]').on('click',function(){
+            var sNav = $(this).data('nav1');
+            $(sNav).addClass('unfold');
+            $(".headerNav").toggleClass("navOpen");
+            
+            if($(sNav).siblings().hasClass("unfold")){
+                $(sNav).siblings().removeClass("unfold");
             }
-        } );
+        });
 
+        // nav2 & close menu
+        $('[data-nav2]').on('click',function(){
+            var sNav = $(this).data('nav2');
+            $(sNav).addClass('unfold');
+            $(".headerNav").toggleClass("navOpen");
 
+            if($(sNav).siblings().hasClass("unfold")){
+                $(sNav).siblings().removeClass("unfold");
+            }
+        });
+
+        // nav2 & close menu
+        $('[data-nav3]').on('click',function(){
+            var sNav = $(this).data('nav3');
+            $(sNav).addClass('unfold');
+            $(".headerNav").toggleClass("navOpen");
+
+            if($(sNav).siblings().hasClass("unfold")){
+                $(sNav).siblings().removeClass("unfold");
+            }
+        });
+
+        // nav4 & close menu
+        $('[data-nav4]').on('click',function(){
+            var sNav = $(this).data('nav4');
+            $(sNav).addClass('unfold');
+            $(".headerNav").toggleClass("navOpen");
+
+            if($(sNav).siblings().hasClass("unfold")){
+                $(sNav).siblings().removeClass("unfold");
+            }
+        });
+                
+        
+        
+        
 // Proceed through stages
 
         $('[data-targetstage1]').on('click',function(){
@@ -101,11 +148,6 @@ $(function(){
             }
         });
 
-   
-
-
-
-
 
         // step progress navigation cleanup
 
@@ -113,6 +155,7 @@ $(function(){
             $('.numberPeople').prop('checked', false);
             $('.vehicle').prop('checked', false);
             $('.b1').addClass('nextButtonHidden');
+            $('.b2').addClass('nextButtonHidden2');
 
             if ($(".transportForm").hasClass('tripStage1')) {
                 $(".transportForm").removeClass('tripStage1');

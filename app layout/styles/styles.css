@@ -11,7 +11,6 @@
   line-height: 1.125em;
   width: 100%;
   left: 2.5em;
-  padding-right: 4em;
 }
 
 .lightpick--inlined {
@@ -895,7 +894,7 @@ fieldset {
 
 .nextButton a {
   text-align: center;
-  color: #bdbdbd;
+  color: gainsboro;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -961,7 +960,7 @@ fieldset {
   display: flex;
   width: 100%;
   height: 100%;
-  font-size: 2em;
+  font-size: 1.4em;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1009,6 +1008,7 @@ fieldset {
   font-size: .8em;
   font-weight: 700;
   position: absolute;
+  background-color: #bdbdbd;
 }
 
 .nextButtonHidden2 {
@@ -1038,6 +1038,7 @@ fieldset {
   font-size: .8em;
   font-weight: 700;
   position: absolute;
+  background-color: #bdbdbd;
 }
 
 .nextButtonHidden3 {
@@ -1067,6 +1068,7 @@ fieldset {
   font-size: .8em;
   font-weight: 700;
   position: absolute;
+  background-color: #bdbdbd;
 }
 
 .buttonHidden {
@@ -1097,6 +1099,36 @@ fieldset {
   -webkit-transition: .5s ease all;
   transition: .5s ease all;
   pointer-events: none;
+}
+
+.leaflet-measure-path-measurement {
+  position: absolute;
+  font-size: 1.5em;
+  color: black;
+  text-shadow: -1px  0 0 white, -1px -1px 0 white, 0 -1px 0 white, 1px -1px 0 white, 1px  0 0 white, 1px  1px 0 white, 0  1px 0 white, -1px  1px 0 white;
+  white-space: nowrap;
+  -webkit-transform-origin: 0;
+          transform-origin: 0;
+  pointer-events: none;
+}
+
+.leaflet-measure-path-measurement > div {
+  position: relative;
+  margin-top: 50%;
+  background-color: #fff;
+  left: -40%;
+  padding: .2em;
+  border-radius: .2em;
+}
+
+.leaflet-marker-pane img {
+  background-color: gainsboro;
+  padding: 0.3em;
+  border-radius: 2em;
+  font-size: 2em;
+  -webkit-box-shadow: 0.3em 0.3em 0.5em 0em #00000045;
+          box-shadow: 0.3em 0.3em 0.5em 0em #00000045;
+  border: thin solid #bdbdbd;
 }
 
 * {
@@ -1130,7 +1162,7 @@ h1, h2, h3, h4, h5 {
           flex-direction: column;
   -webkit-transition: all ease 1s;
   transition: all ease 1s;
-  background-color: #2e2e2e;
+  background-color: #0c0c0c;
 }
 
 .app {
@@ -1183,21 +1215,55 @@ h1, h2, h3, h4, h5 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-image: url("assets/mainBg.jpg");
+  background-image: url("../assets/mainBg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
-.app .layer main .planYourTrip .feature h2 {
+.app .layer main .planYourTrip .mainHeading {
+  background-color: #8f3013;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 10%;
+          flex: 0 0 10%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  flex: 0 0 10%;
+  padding: .7em;
+  -webkit-box-shadow: 0em 0em 3em 0em #000000;
+          box-shadow: 0em 0em 3em 0em #000000;
+}
+
+.app .layer main .planYourTrip .mainHeading h2 {
   font-size: 7vw;
   text-align: center;
+  line-height: 1.2;
 }
 
 .app .layer main .planYourTrip .startTrip {
-  height: 6em;
   background-color: #333;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 10%;
+          flex: 0 0 10%;
+  -webkit-box-shadow: 0em 0em 3em 0em #000000;
+          box-shadow: 0em 0em 3em 0em #000000;
 }
 
 .app .layer main .planYourTrip .startTrip h1 {
@@ -1211,7 +1277,7 @@ h1, h2, h3, h4, h5 {
   background-color: #333;
 }
 
-.tripStages {
+.section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1225,7 +1291,33 @@ h1, h2, h3, h4, h5 {
   height: 100vh;
 }
 
-.tripStages .steps {
+.section .page {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  color: gainsboro;
+}
+
+.section .page h2 {
+  color: #8f3013;
+}
+
+.section .page p {
+  font-size: .85em;
+  padding: .3em 1em;
+}
+
+.section .steps {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1245,7 +1337,7 @@ h1, h2, h3, h4, h5 {
   font-size: 2.5em;
 }
 
-.tripStages .steps div {
+.section .steps div {
   height: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1261,7 +1353,7 @@ h1, h2, h3, h4, h5 {
   border-radius: .3em;
 }
 
-.tripStages h1 {
+.section h1 {
   text-align: center;
   color: gainsboro;
   font-weight: 300;
@@ -1338,6 +1430,7 @@ h1, h2, h3, h4, h5 {
   font-size: 11px;
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
+  border: thin solid #242424;
 }
 
 .progress .activeBar {
@@ -1349,9 +1442,50 @@ h1, h2, h3, h4, h5 {
   z-index: 11;
 }
 
+.progress .faded {
+  opacity: .5;
+  background-color: #2e2e2e;
+}
+
 .layer {
   -webkit-transition: all ease 1s;
   transition: all ease 1s;
+}
+
+.layer1 {
+  -webkit-clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
+  opacity: 0;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  border-radius: 0em 0em 100em 0em;
+}
+
+.layer2 {
+  -webkit-clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
+  opacity: 0;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  border-radius: 0em 0em 100em 0em;
+}
+
+.layer3 {
+  -webkit-clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
+  opacity: 0;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  border-radius: 0em 0em 100em 0em;
+}
+
+.layer4 {
+  -webkit-clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
+  opacity: 0;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  border-radius: 0em 0em 100em 0em;
 }
 
 .fold {
@@ -1396,7 +1530,6 @@ h1, h2, h3, h4, h5 {
           transform: translate(0, -100vh);
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
-  background-color: #0c0c0c;
 }
 
 .tripStage2 {
@@ -1404,7 +1537,6 @@ h1, h2, h3, h4, h5 {
           transform: translate(0, -200vh);
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
-  background-color: #2e2e2e;
 }
 
 .tripStage3 {
@@ -1412,7 +1544,6 @@ h1, h2, h3, h4, h5 {
           transform: translate(0, -300vh);
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
-  background-color: #0c0c0c;
 }
 
 .tripStage4 {
@@ -1420,7 +1551,6 @@ h1, h2, h3, h4, h5 {
           transform: translate(0, -400vh);
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
-  background-color: #2e2e2e;
 }
 
 .tripStage5 {
@@ -1428,7 +1558,6 @@ h1, h2, h3, h4, h5 {
           transform: translate(0, -500vh);
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
-  background-color: #0c0c0c;
 }
 
 .moveTo5 {
@@ -1468,6 +1597,7 @@ h1, h2, h3, h4, h5 {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  z-index: 9;
 }
 
 .header img {
@@ -1489,10 +1619,6 @@ h1, h2, h3, h4, h5 {
 
 .header .right {
   font-size: 1.5em;
-}
-
-.layerMain .middle {
-  color: gainsboro;
 }
 
 .layer1 .header {
@@ -1520,33 +1646,25 @@ h1, h2, h3, h4, h5 {
   padding-right: 10vw;
 }
 
-.color-scheme > :nth-child(4n+1) {
-  background-color: #8f3013;
-}
-
-.color-scheme > :nth-child(4n+2) {
-  background-color: gainsboro;
-}
-
-.color-scheme > :nth-child(4n+3) {
-  background-color: #bdbdbd;
-}
-
-.color-scheme > :nth-child(4n+4) {
-  background-color: #2e2e2e;
-}
-
 .layerMain {
   background-color: #0c0c0c;
+}
+
+.layer {
+  background-color: #0c0c0c;
+}
+
+.layerMain .middle {
+  color: gainsboro;
 }
 
 .headerNav {
   -webkit-transition: 1.7s ease all;
   transition: 1.7s ease all;
-  height: 10%;
+  height: 12%;
   position: absolute;
   z-index: 11;
-  width: 5em;
+  width: 6em;
   color: gainsboro;
   -webkit-transition: ease 1s all;
   transition: ease 1s all;
@@ -1558,6 +1676,9 @@ h1, h2, h3, h4, h5 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.headerNav img {
   padding: .5em;
 }
 
@@ -1637,6 +1758,12 @@ h1, h2, h3, h4, h5 {
 
 .navOpen img {
   opacity: 1;
+}
+
+.navOpen i {
+  color: #e24301;
+  -webkit-transition: ease all 1.7s;
+  transition: ease all 1.7s;
 }
 
 .navOpen .menuButton {
@@ -1776,18 +1903,6 @@ h1, h2, h3, h4, h5 {
   height: 0;
 }
 
-.trip4 .wanakaMap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 80%;
-  background-image: url("assets/explore-wanaka.jpg");
-  background-size: 150%;
-  background-position: bottom;
-  background-repeat: no-repeat;
-}
-
 .trip5 {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
@@ -1898,5 +2013,9 @@ div#fuelEconomy div {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+.SegmentLength {
+  display: none;
 }
 /*# sourceMappingURL=styles.css.map */
