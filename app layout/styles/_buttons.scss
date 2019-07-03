@@ -102,7 +102,7 @@
     display: block;
     width: 100%;
     text-transform: uppercase;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: bold;
     line-height: 1;
     transform-origin: left bottom;
@@ -274,6 +274,12 @@
 .formPeeps {
   height:100%;
   transition:3s ease all;
+}
+
+.numberPeople {
+  img {
+    width: 25% !important;
+  }
 }
 
 .formboxHidden {

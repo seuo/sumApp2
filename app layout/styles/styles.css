@@ -706,7 +706,7 @@ fieldset {
   display: block;
   width: 100%;
   text-transform: uppercase;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: bold;
   line-height: 1;
   -webkit-transform-origin: left bottom;
@@ -978,6 +978,10 @@ fieldset {
   transition: 3s ease all;
 }
 
+.numberPeople img {
+  width: 25% !important;
+}
+
 .formboxHidden {
   opacity: 0;
   height: 0;
@@ -1110,7 +1114,7 @@ fieldset {
   position: absolute;
   font-size: 1.5em;
   color: black;
-  text-shadow: -1px  0 0 white, -1px -1px 0 white, 0 -1px 0 white, 1px -1px 0 white, 1px  0 0 white, 1px  1px 0 white, 0  1px 0 white, -1px  1px 0 white;
+  text-shadow: -1px  0 0 white, -1px -1px 0 white, 0 -1px 0 white, 1px -1px 0 white, 1px  0 0 white, 1px  1px 0 white, 0  1px 0 white, -1px  1px 0 white;
   white-space: nowrap;
   -webkit-transform-origin: 0;
           transform-origin: 0;
