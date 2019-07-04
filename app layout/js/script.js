@@ -5,6 +5,7 @@ $(function(){
 
             var sLayer = $(this).data('target');
             $(sLayer).addClass('unfold');
+            $(".layerHome").addClass('fold');
         });
 
         $('[data-dismiss]').on('click',function(){
@@ -21,11 +22,11 @@ $(function(){
         });
 
         $('[data-navHome]').click( function() {
-            var sNav = $(this).data('navHome');
             $(".headerNav").toggleClass("navOpen");
             
             if($(".layerMain").siblings().hasClass("unfold")){
                 $(".layerMain").siblings().removeClass("unfold");
+                $(".layerHome").removeClass('fold');
             }
         });
 
@@ -35,6 +36,7 @@ $(function(){
             var sNav = $(this).data('nav1');
             $(sNav).addClass('unfold');
             $(".headerNav").toggleClass("navOpen");
+            $(".layerHome").addClass('fold');
             
             if($(sNav).siblings().hasClass("unfold")){
                 $(sNav).siblings().removeClass("unfold");
@@ -166,8 +168,8 @@ $(function(){
             if ($(".transportForm").hasClass('tripStage3')) {
                 $(".transportForm").removeClass('tripStage3');
             }
-            if ($(".form4").hasClass('moveTo5')) {
-                $(".form4").removeClass('moveTo5');
+            if ($(".radioButtonShow").hasClass('moveTo5')) {
+                $(".radioButtonShow").removeClass('moveTo5');
             }
 
         });
@@ -179,8 +181,8 @@ $(function(){
             if ($(".transportForm").hasClass('tripStage3')) {
                 $(".transportForm").removeClass('tripStage3');
             }
-            if ($(".form4").hasClass('moveTo5')) {
-                $(".form4").removeClass('moveTo5');
+            if ($(".radioButtonShow").hasClass('moveTo5')) {
+                $(".radioButtonShow").removeClass('moveTo5');
             }
         });
 
@@ -188,8 +190,8 @@ $(function(){
             if ($(".transportForm").hasClass('tripStage3')) {
                 $(".transportForm").removeClass('tripStage3');
             }
-            if ($(".form4").hasClass('moveTo5')) {
-                $(".form4").removeClass('moveTo5');
+            if ($(".radioButtonShow").hasClass('moveTo5')) {
+                $(".radioButtonShow").removeClass('moveTo5');
             }
         });
 
@@ -218,8 +220,8 @@ $(function(){
     });
 
     $('[data-bookingvehicle]').on('click',function(){
-        var sForm4 = $(this).data('bookingvehicle');
-        $(sForm4).addClass('moveTo5');
+        // var sForm4 = $(this).data('bookingvehicle');
+        $(".radioButtonShow").addClass('moveTo5');
     });
 
     $(function() {
