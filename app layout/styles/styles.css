@@ -1159,16 +1159,6 @@ h1, h2, h3, h4, h5 {
 .transportForm {
   position: absolute;
   height: 600vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 90%;
-          flex: 1 0 90%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-transition: all ease 1s;
   transition: all ease 1s;
   background-color: #0c0c0c;
@@ -1178,19 +1168,18 @@ h1, h2, h3, h4, h5 {
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+  background-color: #0c0c0c;
 }
 
 .app .layer {
   position: absolute;
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow: hidden;
 }
 
 .app .layer header {
@@ -1468,6 +1457,19 @@ h1, h2, h3, h4, h5 {
   transition: all ease 1s;
 }
 
+.layerMain {
+  background-color: #0c0c0c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
+  opacity: 0;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  border-radius: 0em 0em 100em 0em;
+}
+
 .layer1 {
   -webkit-clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
           clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
@@ -1514,7 +1516,7 @@ h1, h2, h3, h4, h5 {
   pointer-events: none;
 }
 
-.unfold {
+.active {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   opacity: 1;
@@ -1523,6 +1525,10 @@ h1, h2, h3, h4, h5 {
   border-radius: 0em 0em 0em 0em;
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1 !important;
 }
 
 .move-left {
@@ -1545,6 +1551,7 @@ h1, h2, h3, h4, h5 {
           transform: translate(0, -100vh);
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
+  overflow: hidden;
 }
 
 .tripStage2 {
@@ -1552,6 +1559,7 @@ h1, h2, h3, h4, h5 {
           transform: translate(0, -200vh);
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
+  overflow: hidden;
 }
 
 .tripStage3 {
@@ -1559,6 +1567,7 @@ h1, h2, h3, h4, h5 {
           transform: translate(0, -300vh);
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
+  overflow: hidden;
 }
 
 .tripStage4 {
@@ -1566,6 +1575,7 @@ h1, h2, h3, h4, h5 {
           transform: translate(0, -400vh);
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
+  overflow: hidden;
 }
 
 .tripStage5 {
@@ -1573,6 +1583,7 @@ h1, h2, h3, h4, h5 {
           transform: translate(0, -500vh);
   -webkit-transition: 1s ease all;
   transition: 1s ease all;
+  overflow: hidden;
 }
 
 .moveTo5 {
@@ -1666,6 +1677,9 @@ h1, h2, h3, h4, h5 {
 
 .layerMain {
   background-color: #0c0c0c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .layer {
@@ -1919,10 +1933,6 @@ h1, h2, h3, h4, h5 {
   visibility: hidden;
   opacity: 0;
   height: 0;
-}
-
-.trip2 {
-  z-index: 9999;
 }
 
 .form2 .option-group {

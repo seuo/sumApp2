@@ -15,19 +15,19 @@
 <body>
 
     <div class="app">
-        <div class="layer layerMain">
             <nav class="headerNav">
-                <div class="menuButton"><i class="fas fa-ellipsis-v"></i></div>
-                <div class="middle"><img src="assets/wanaka-logo.png" alt="">
-                    <ul class="appNav">
-                        <li><a href="#" data-navHome=".layerHome">HOME</a></li>
-                        <li><a href="#" data-nav1=".layer1">PLAN YOUR TRIP</a></li>
-                        <li><a href="#" data-nav2=".layer2">THINGS TO DO IN WANAKA</a></li>
-                        <li><a href="#" data-nav3=".layer3">ACCOMMODATION</a></li>
-                        <li><a href="#" data-nav4=".layer4">CONTACT US</a></li>
-                    </ul>
-                </div>
-            </nav>
+                    <div class="menuButton"><i class="fas fa-ellipsis-v"></i></div>
+                    <div class="middle"><img src="assets/wanaka-logo.png" alt="">
+                        <ul class="appNav">
+                            <li><a href="#" data-navHome=".layerHome">HOME</a></li>
+                            <li><a href="#" data-nav1=".layer1">PLAN YOUR TRIP</a></li>
+                            <li><a href="#" data-nav2=".layer2">THINGS TO DO IN WANAKA</a></li>
+                            <li><a href="#" data-nav3=".layer3">ACCOMMODATION</a></li>
+                            <li><a href="#" data-nav4=".layer4">CONTACT US</a></li>
+                        </ul>
+                    </div>
+                </nav>
+        <div class="layer layerMain active">
             <header class="header">
                 <div><img src="assets/wanaka-logo.png" alt=""></div>
             </header>
@@ -312,11 +312,6 @@
                         <div class="steps">
                         </div>
                         <div id="map">
-                            <div class="travelInfo">
-                                <span></span>
-                                <!-- <div id="distance"></div>
-                                    <div id="fuelCons"></div> -->
-                            </div>
                         </div>
 
                         <div class="clearBtn">CLEAR MAP</div>
@@ -461,19 +456,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
 
     <!-- plugin scripts -->
+     <!-- date picker js script plugin -->
     <script src="plugins/card-js.min.js"></script>    <!-- credit card form js plugin -->
-    <script src="plugins/lightpick.js"></script>    <!-- date picker js script plugin -->
+    <script src="plugins/lightpick.js"></script>    <!-- google map cdn for map distances etc -->
     <script src="plugins/leaflet-measure-path.js"></script>  <!-- map distance js script plugin -->
-  
 
+    
     <!-- js scripts -->
     <script src="js/script.js"></script>    <!-- main script for navigation and layout purposes -->
-    <script src="js/tripCalculator.js"></script>    <!-- trip calculator script (days,people,fuel consumption,pricing etc) -->
+    <script src="js/tripCalculator.js"></script>
     <script src="js/map.js"></script>    <!-- map js for plotting trip script  -->
 
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDknEtmtQzCjjFGOAJiHVFKcBegAsUBUKc&callback=initMap" async defer></script>  
     <!-- google cdn scripts -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDknEtmtQzCjjFGOAJiHVFKcBegAsUBUKc&callback=initMap" async defer></script>    <!-- google map cdn for map distances etc -->
     <!-- <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
 	<script src="jquery.mask.js"></script> -->
 

@@ -42,24 +42,24 @@ h1,h2,h3,h4,h5 {
     .transportForm {
         position:absolute;
         height:600vh;
-        display:flex;
-        flex:1 0 90%;
-        flex-direction:column;
         transition:all ease 1s;
         background-color:$color-5;
+        // display:flex;
+        // flex:1 0 90%;
+        // flex-direction:column;
     }
 
 .app {
     min-height:100vh;
     position: relative;
     overflow:hidden;
-
+    background-color:$color-5;
     .layer {
         position: absolute;
         width: 100%;
         height:100%;
-        display: flex;
         flex-direction: column;
+        overflow: hidden;
         header {
             height: 12%;
         }
@@ -234,6 +234,15 @@ h1,h2,h3,h4,h5 {
     transition:all ease 1s;
 }
 
+.layerMain {
+    background-color:$color-5;
+    display: flex;
+    clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
+    opacity:0;
+    transform-origin: top left;
+    border-radius:0em 0em 100em 0em;
+}
+
 .layer1 {
     clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0 100%);
     opacity:0;
@@ -273,12 +282,14 @@ h1,h2,h3,h4,h5 {
     pointer-events:none;
 }
 
-.unfold {
+.active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     opacity:1;
     transform-origin: top left;
     border-radius:0em 0em 0em 0em;
     transition:1s ease all;
+    display: flex;
+    opacity:1 !important;
 }
 
 .move-left {
@@ -297,26 +308,31 @@ h1,h2,h3,h4,h5 {
 .tripStage1 {
     transform:translate(0,-100vh);
     transition:1s ease all;
+    overflow: hidden;
 }
 
 .tripStage2 {
     transform:translate(0,-200vh);
     transition:1s ease all;
+    overflow: hidden;
 }
 
 .tripStage3 {
     transform:translate(0,-300vh);
     transition:1s ease all;
+    overflow: hidden;
 }
 
 .tripStage4 {
     transform:translate(0,-400vh);
     transition:1s ease all;
+    overflow: hidden;
 }
 
 .tripStage5 {
     transform:translate(0,-500vh);
     transition:1s ease all;
+    overflow: hidden;
 }
 
 .moveTo5 {
@@ -396,6 +412,7 @@ h1,h2,h3,h4,h5 {
 
 .layerMain {
     background-color:$color-5;
+    display: flex;
 }
 
 .layer {
@@ -602,9 +619,10 @@ h1,h2,h3,h4,h5 {
 
 // miscModule
 
-.trip2 {
-    z-index: 9999;
-}
+// .trip2 {
+//     z-index: 9999;
+// }
+
 
     .form2 {
         .option-group {
